@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ycxbsPUr1uxmIs+AAEYPGO0+X/kqBj5Sa0r8zNurlWYdpHz+wUht+p2sqYJu6OOOVD8dBLKn2J9JbT0ty72OQw==",
+  "dgSpecHash": "RRdaQNhYKdp+PKqy79HbasDqwzWRngzRwuk4CWKAWhOjP1hcxeUnTl1SVAjw2QT35hrZrMqplkPGWNsxpY0LYQ==",
   "success": true,
-  "projectFilePath": "D:\\учеба емое\\проганье\\летняя практика\\SummerPractise\\SummerPractise\\SummerPractise.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\catsv\\Documents\\GitHub\\SummerPractise\\SummerPractise\\SummerPractise.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\catsv\\.nuget\\packages\\materialdesigncolors\\2.0.1\\materialdesigncolors.2.0.1.nupkg.sha512",
+    "C:\\Users\\catsv\\.nuget\\packages\\materialdesignthemes\\4.1.0\\materialdesignthemes.4.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

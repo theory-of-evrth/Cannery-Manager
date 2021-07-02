@@ -24,5 +24,9 @@ namespace SummerPractise
         {
             InitializeComponent();
         }
+        private void Button_Login(Object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
