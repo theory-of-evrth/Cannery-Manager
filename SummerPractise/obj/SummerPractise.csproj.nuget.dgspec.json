@@ -47,6 +47,10 @@
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[4.1.0, )"
+            },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.7, )"
             }
           },
           "imports": [

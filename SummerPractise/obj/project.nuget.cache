@@ -1,11 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "RRdaQNhYKdp+PKqy79HbasDqwzWRngzRwuk4CWKAWhOjP1hcxeUnTl1SVAjw2QT35hrZrMqplkPGWNsxpY0LYQ==",
+  "dgSpecHash": "+Vt9IPnhFcKaSwh2b1CWLeulnFzqLpgM2WLk8r8bUIWDMoEnGYbBCSVgLRTh6F+bFxISk983LhoRkD2sADdaAw==",
   "success": true,
   "projectFilePath": "C:\\Users\\catsv\\Documents\\GitHub\\SummerPractise\\SummerPractise\\SummerPractise.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\catsv\\.nuget\\packages\\materialdesigncolors\\2.0.1\\materialdesigncolors.2.0.1.nupkg.sha512",
-    "C:\\Users\\catsv\\.nuget\\packages\\materialdesignthemes\\4.1.0\\materialdesignthemes.4.1.0.nupkg.sha512"
+    "C:\\Users\\catsv\\.nuget\\packages\\materialdesignthemes\\4.1.0\\materialdesignthemes.4.1.0.nupkg.sha512",
+    "C:\\Users\\catsv\\.nuget\\packages\\microsoft.data.sqlite\\5.0.7\\microsoft.data.sqlite.5.0.7.nupkg.sha512",
+    "C:\\Users\\catsv\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.7\\microsoft.data.sqlite.core.5.0.7.nupkg.sha512",
+    "C:\\Users\\catsv\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\catsv\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
+    "C:\\Users\\catsv\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\catsv\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
+    "C:\\Users\\catsv\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
   "logs": []
 }
