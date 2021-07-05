@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
@@ -11,6 +9,7 @@ namespace SummerPractise
     {
         private string jsonResponse;
         private List<CurrencyRateNBU> currencyRatesNBU;
+        private CurrencyRatePrivat currencyRatePrivat;
 
         public void FillListFromJSONToCurrentDayNBU()
         {
@@ -27,7 +26,7 @@ namespace SummerPractise
             currencyRatesNBU = JsonConvert.DeserializeObject<List<CurrencyRateNBU>>(jsonResponse);
         }
 
-        public void FillListFromJSONToDayNBU(string date)
+        public void FillListFromJSONToDateNBU(string date)
         {
             WebRequesterToAPI webRequesterToAPI = new WebRequesterToAPI();
             webRequesterToAPI.MakeRequestToDate(date);
@@ -41,10 +40,42 @@ namespace SummerPractise
             }
             currencyRatesNBU = JsonConvert.DeserializeObject<List<CurrencyRateNBU>>(jsonResponse);
         }
+        public void FillCurrencyRateToCurrentDayPrivat()
+        {
+            WebRequesterToAPI webRequesterToAPI = new WebRequesterToAPI();
+            webRequesterToAPI.MakeRequestToCurrentDatePrivat();
+            using (WebResponse webResponse = webRequesterToAPI.GetResponse())
+            {
+                using (Stream dataStream = webResponse.GetResponseStream())
+                {
+                    StreamReader streamReader = new StreamReader(dataStream);
+                    jsonResponse = streamReader.ReadToEnd();
+                }
+            }
+            currencyRatePrivat = JsonConvert.DeserializeObject<CurrencyRatePrivat>(jsonResponse);
+        }
+        public void FillCurrencyRateToDatePrivat(string date)
+        {
+            WebRequesterToAPI webRequesterToAPI = new WebRequesterToAPI();
+            webRequesterToAPI.MakeRequestToDatePrivat(date);
+            using (WebResponse webResponse = webRequesterToAPI.GetResponse())
+            {
+                using (Stream dataStream = webResponse.GetResponseStream())
+                {
+                    StreamReader streamReader = new StreamReader(dataStream);
+                    jsonResponse = streamReader.ReadToEnd();
+                }
+            }
+            currencyRatePrivat = JsonConvert.DeserializeObject<CurrencyRatePrivat>(jsonResponse);
+        }
 
         public List<CurrencyRateNBU> GetCurrencyRatesNBU()
         {
             return currencyRatesNBU;
+        }
+        public CurrencyRatePrivat GetCurrencyRatePrivat()
+        {
+            return currencyRatePrivat;
         }
         
     }
