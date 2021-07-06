@@ -28,20 +28,22 @@ namespace SummerPractise
             InitializeComponent();
 
             StorageContext db = new StorageContext();
-            
+
             //    // создаем два объекта User
             //User user1 = new User { id = 1, name = "Kolya", password = "Nikolay" };
             //User user2 = new User { id = 2, name = "Sam", password = "1234567890" };
-            //User user1 = new User { id = 3, name = "Kolya", password = "Nikolay" };
-            //User user2 = new User { id = 4, name = "Sam", password = "1234567890" };
-            
+            //User user3 = new User { id = 3, name = "Kolya", password = "Nikolay" };
+            //User user4 = new User { id = 4, name = "Sam", password = "1234567890" };
+
             //    // добавляем их в бд
             //db.Users.Add(user1);
             //db.Users.Add(user2);
+            //db.Users.Add(user3);
+            //db.Users.Add(user4);
             //db.SaveChanges();
 
-                // получаем объекты из бд и выводим на консоль
-                var users = db.Users;
+            // получаем объекты из бд и выводим на консоль
+            var users = db.Users;
                 foreach (User u in users)
                 {
                     if (u.id == 4)

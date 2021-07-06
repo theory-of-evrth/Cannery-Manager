@@ -1,4 +1,3 @@
-D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\database.db
 D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\SummerPractise.exe
 D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\SummerPractise.deps.json
 D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\SummerPractise.runtimeconfig.json
@@ -51,3 +50,21 @@ D:\учеба емое\проганье\летняя практика\SummerPrac
 D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\obj\Debug\net5.0-windows\ref\SummerPractise.dll
 D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\obj\Debug\net5.0-windows\SummerPractise.pdb
 D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\obj\Debug\net5.0-windows\SummerPractise.genruntimeconfig.cache
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.DotNet.PlatformAbstractions.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Sqlite.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.Extensions.Caching.Memory.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyModel.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.Extensions.Logging.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.Extensions.Options.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.Extensions.Primitives.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\System.Diagnostics.DiagnosticSource.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Humanizer.dll
+D:\учеба емое\проганье\летняя практика\SummerPractise\SummerPractise\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Design.dll
