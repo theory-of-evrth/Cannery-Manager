@@ -6,34 +6,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Compile Update="AdminWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="FinalWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="OrderWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="WorkerWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="AdminWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="FinalWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="OrderWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="WorkerWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
