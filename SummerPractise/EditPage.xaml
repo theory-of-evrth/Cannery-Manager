@@ -9,10 +9,51 @@
       Title="EditPage">
 
     <Grid Background="#F7B739">
+        <TextBlock Text="Бухгалтерия" FontSize="25" FontWeight="Bold" Margin="450 0 0 0" />
+        <TabControl x:Name="products" SelectionChanged="products_SelectionChanged" Margin="10,10,400,10">
+            <TabItem x:Name="smartphonesTab">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="10" >Добавление</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        
+                        <Button Content="Отправить запрос" 
+                                Click="AddPendingGoods_Button" 
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="tabletsTab">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Height="10" Width="10" Fill="Purple" />
+                        <TextBlock Margin="10">Удаление</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Button Content="Отправить запрос" 
+                                Click="DeletePendingGoods_Button" 
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+            </TabItem>
+            <TabItem x:Name="вetsTab">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Height="10" Width="10" Fill="Purple" />
+                        <TextBlock Margin="10">Редактирование</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Button Content="Отправить запрос" 
+                                Click="EditPendingGoods_Button" 
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+            </TabItem>
+        </TabControl>
         <DataGrid Name="Users" 
                   ItemsSource="{Binding}" 
-                  AutoGenerateColumns="False" 
-                  Margin="417,40,40,40" >
+                  AutoGenerateColumns="False" Width="300" HorizontalAlignment="Right" Margin="15" Height="350">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name"  Binding="{Binding name}"/>
                 <DataGridCheckBoxColumn Header="Order Permission" Binding="{Binding order_permission}" />

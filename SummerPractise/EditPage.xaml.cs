@@ -25,5 +25,19 @@ namespace SummerPractise
         {
             InitializeComponent();
         }
+
+        private void products_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void AddPendingGoods_Button(Object sender, RoutedEventArgs e)
+        {
+        }
+        private void DeletePendingGoods_Button(Object sender, RoutedEventArgs e)
+        {
+        }
+        private void EditPendingGoods_Button(Object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

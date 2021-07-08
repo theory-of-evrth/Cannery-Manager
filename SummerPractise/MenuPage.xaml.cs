@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SummerPractise;
+using SummerPractise.Model;
 
 namespace SummerPractise
 {
@@ -19,6 +20,7 @@ namespace SummerPractise
     /// </summary>
     public partial class MenuPage : Page
     {
+        readonly StorageContext db;
         public MenuPage()
         {
             InitializeComponent();
@@ -26,6 +28,8 @@ namespace SummerPractise
 
         private void ToFinal_Button(Object sender, RoutedEventArgs e)
         {
+            
+            //MessageBox.Show($"Успешный логин, человек с id {Current_User.id}");
             MainWindow finalWIN = new MainWindow();
             finalWIN.Content = new FinalWinXaml();
             finalWIN.Show();

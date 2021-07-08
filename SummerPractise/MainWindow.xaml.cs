@@ -25,6 +25,10 @@ namespace SummerPractise
         {
             InitializeComponent();
         }
+        class Current_User
+        {
+            public static int id { get; set; }
+        }
         private void Button_Login(Object sender, RoutedEventArgs e)
         {
             string login = TBLogin.Text;
@@ -48,6 +52,7 @@ namespace SummerPractise
                 if (u.name == login && u.password == password)
                 {
                     MessageBox.Show($"Успешный логин, человек с id {u.id}");
+                    Current_User.id = u.id;
                     MainWindow MenuWIN = new MainWindow();
                     MenuWIN.Content = new MenuPage();
                     this.Close();
