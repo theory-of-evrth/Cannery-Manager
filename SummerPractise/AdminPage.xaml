@@ -54,7 +54,7 @@
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="User"  Binding="{Binding user.name}"/>
                                     <DataGridTextColumn Header="Type" Binding="{Binding type}" />
-                                    <DataGridTextColumn Header="Product" Binding="{Binding obj.name}"  />
+                                    <DataGridTextColumn Header="Product" Binding="{Binding obj.id}"  />
                                     <DataGridTextColumn Header="Value" Binding="{Binding value}" />
                                     <DataGridTextColumn Header="New Value" Binding="{Binding new_value}" />
                                     <DataGridTextColumn Header="Date" Binding="{Binding date}" />
@@ -82,7 +82,7 @@
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="User"  Binding="{Binding user.name}"/>
                                 <DataGridTextColumn Header="Price" Binding="{Binding price}" />
-                                <DataGridTextColumn Header="Currency" Binding="{Binding currency}"  />
+                                <DataGridTextColumn Header="Currency" Binding="{Binding currency.ccy}"  />
                                 <DataGridTextColumn Header="Date" Binding="{Binding date}" />
                                 <DataGridTextColumn Header="Good_in_Stock" Binding="{Binding obj}" />
                             </DataGrid.Columns>
