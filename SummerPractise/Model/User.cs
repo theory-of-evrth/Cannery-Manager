@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SummerPractise.Model
 {
-    public class User
+    public class User 
     {
         public int id { get; set; }
         public string name { get; set; }

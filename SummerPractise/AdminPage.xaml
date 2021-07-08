@@ -22,7 +22,16 @@
                 <TabItem.Content>
                     <StackPanel>
                         <!-- Сюда таблицу фигачим -->
-                        
+                        <Grid>
+                            <DataGrid Name="Users" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Name"  Binding="{Binding name}"/>
+                                    <DataGridCheckBoxColumn Header="Order Permission" Binding="{Binding order_permission}" />
+                                    <DataGridCheckBoxColumn Header="Edit Permission" Binding="{Binding edit_permission}"  />
+                                    <DataGridCheckBoxColumn Header="Is provider" Binding="{Binding is_provider}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
                         <Button Content="Добавить пользователя" 
                                 HorizontalAlignment="Center" 
                                 Click="AddUser_Button" 
