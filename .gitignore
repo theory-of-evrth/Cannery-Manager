@@ -333,3 +333,5 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 SummerPractise/obj/Debug/netcoreapp3.1/SummerPractise.designer.runtimeconfig.json
+*.cache
+*.cache

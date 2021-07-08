@@ -1,0 +1,18 @@
+﻿<Page x:Class="SummerPractise.OrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SummerPractise"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Заказчик">
+
+    <Grid Background="#F7B739">
+        <TextBlock Text="Оформление заказа" FontSize="25" FontWeight="Bold" Margin="250 0 0 0" />
+        <Button Content="Добавить товар" HorizontalAlignment="Left" Margin="437,156,0,262" />
+        <Button Content="Удалить товар" HorizontalAlignment="Right" Margin="0,156,62,262" Width="137"/>
+        <DataGrid Name="dgv" HorizontalAlignment="Left" Margin="39,121,0,0" VerticalAlignment="Top" Height="319" Width="361"/>
+        <TextBlock Text="Общая сумма заказа: " FontSize="25" FontWeight="Bold" Margin="462,300,62,0"/>
+    </Grid>
+</Page>
