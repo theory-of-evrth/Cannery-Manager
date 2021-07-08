@@ -63,6 +63,9 @@ namespace SummerPractise
                     {
                         //открыть финальное окно(вкладку)
                         MessageBox.Show("Добро пожаловать и до свидания");
+                        MainWindow finalWIN = new MainWindow();
+                        finalWIN.Content = new FinalWinXaml();
+                        finalWIN.Show();
                     }
                 }  
             }

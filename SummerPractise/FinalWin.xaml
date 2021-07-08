@@ -1,0 +1,82 @@
+﻿<Page x:Class="SummerPractise.FinalWinXaml"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SummerPractise"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FinalWindow">
+
+
+    <Grid Background="#F7B739">
+        <TextBlock Text=" " FontSize="25" FontWeight="Bold" Margin="450 0 0 0" />
+
+        <TabControl x:Name="products">
+            <TabItem x:Name="smartphonesTab">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Purple" />
+                        <TextBlock Margin="10" >Товары на продажу</TextBlock>
+                    </StackPanel>
+
+                </TabItem.Header>
+
+
+                <TabItem.Content>
+
+                    <DataGrid AutoGenerateColumns="False" 
+                                        Height="800" 
+                                        HorizontalAlignment="Left" 
+                                        Name="dataGrid1" 
+                                        VerticalAlignment="Top" 
+                                        Width="800"
+                              ItemsSource="{Binding}">
+
+                        <DataGrid.Columns >
+
+                            <DataGridTextColumn Header = "ID" Binding="{Binding id}" MinWidth="80" IsReadOnly="True"/>
+                            <DataGridTextColumn Header = "Name" Binding="{Binding name}" MinWidth="80" IsReadOnly="True"/>
+                            <DataGridTextColumn  Header = "Price" Binding="{Binding price}" MinWidth="80" IsReadOnly="True"/>
+                            <DataGridTextColumn Header = "Description" Binding="{Binding description}" MinWidth="80" IsReadOnly="True"/>
+                            <DataGridTextColumn  Header = "Num" Binding="{Binding num}" MinWidth="80" IsReadOnly="True"/>
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="tabletsTab">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Purple" />
+                        <TextBlock Margin="10">Совершенные сделки</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <!-- таблица -->
+
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="вetsTab">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Purple" />
+                        <TextBlock Margin="10">Просмотр курса валют</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <!-- таблица -->
+
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</Page>

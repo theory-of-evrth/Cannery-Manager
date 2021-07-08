@@ -154,3 +154,5 @@ D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\SummerPractise.cs
 D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\SummerPractise.dll
 D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\SummerPractise.pdb
 D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\SummerPractise.genruntimeconfig.cache
+C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\FinalWin.g.cs
+C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\FinalWin.baml
