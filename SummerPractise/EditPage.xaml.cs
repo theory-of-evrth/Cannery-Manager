@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SummerPractise.Model;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,11 +23,23 @@ namespace SummerPractise
     /// </summary>
     public partial class EditPage : Page
     {
+        StorageContext db;
         public EditPage()
         {
             InitializeComponent();
+            FillDateTables();
+            chooseProvider.ItemsSource = typeof(Provider_Offer).GetProperties();
         }
 
+        private void FillDateTables()
+        {
+            db = new StorageContext();
+            db.Goods_In_Stocks.Load();
+            db.Users.Load();
+            Goods_Datagrid.ItemsSource = db.Goods_In_Stocks.Local.ToBindingList();
+            db.Provider_Offers.Load();
+            ProviderOffers_Datagrid.ItemsSource = db.Provider_Offers.Local.ToBindingList();
+        }
         private void products_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
