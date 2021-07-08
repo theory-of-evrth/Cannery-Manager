@@ -18,18 +18,7 @@ namespace SummerPractise
         {
             storageContext.Add(entity);
             storageContext.SaveChanges();
-        }       
-
-        //public IQueryable<TEntity> GetEntities<TEntity>(TEntity entity)
-        //{
-            //IQueryable<Model.Change> changes = from change in storageContext.Changes
-             //                                  where change.approved == false
-               //                                select change;
-            //IQueryable<TEntity> entities = from entity in storageContext.(entity.GetType())
-            //                               where ;
-            //return entities;
-        //}
-
+        }
     }
 }
 //

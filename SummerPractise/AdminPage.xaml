@@ -10,7 +10,7 @@
 
     <Grid Background="#F7B739">
         <TextBlock Text="Администрация" FontSize="25" FontWeight="Bold" Margin="450 0 0 0" />
-        
+
         <TabControl x:Name="products">
             <TabItem x:Name="smartphonesTab">
                 <TabItem.Header>
@@ -22,7 +22,7 @@
                 <TabItem.Content>
                     <StackPanel>
                         <!-- Сюда таблицу фигачим -->
-                        <Grid>
+                        <Grid Height="300">
                             <DataGrid Name="UsersDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Name"  Binding="{Binding name}"/>
@@ -32,9 +32,9 @@
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
-                        <Button Content="Добавить пользователя" 
+                        <Button Content="Сохранить" 
                                 HorizontalAlignment="Center" 
-                                Click="AddUser_Button" 
+                                Click="SaveButton_Click" 
                                 Style="{StaticResource MaterialDesignFlatButton}" />
                     </StackPanel>
                 </TabItem.Content>
@@ -49,22 +49,22 @@
                 <TabItem.Content>
                     <StackPanel>
                         <!--  -->
-                        <Grid>
+                        <Grid Height="300">
                             <DataGrid Name="ChangesDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="User"  Binding="{Binding user.name}"/>
                                     <DataGridTextColumn Header="Type" Binding="{Binding type}" />
-                                    <DataGridTextColumn Header="Product" Binding="{Binding obj.id}"  />
+                                    <DataGridTextColumn Header="Product" Binding="{Binding obj.name}"  />
                                     <DataGridTextColumn Header="Value" Binding="{Binding value}" />
                                     <DataGridTextColumn Header="New Value" Binding="{Binding new_value}" />
                                     <DataGridTextColumn Header="Date" Binding="{Binding date}" />
-                                    <DataGridTextColumn Header="Approved" Binding="{Binding approved}" />
+                                    <DataGridCheckBoxColumn Header="Approved" Binding="{Binding approved}" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
-                        <Button Content="Добавить пользователя" 
+                        <Button Content="Сохранить" 
                                 HorizontalAlignment="Center" 
-                                Click="AddUser_Button" 
+                                Click="SaveButton_Click"
                                 Style="{StaticResource MaterialDesignFlatButton}" />
                     </StackPanel>
                 </TabItem.Content>
@@ -76,6 +76,19 @@
                         <TextBlock Margin="10">Поставщики</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <DataGrid Name="ProvidersDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="User"  Binding="{Binding user.name}"/>
+                                <DataGridTextColumn Header="Price" Binding="{Binding price}" />
+                                <DataGridTextColumn Header="Currency" Binding="{Binding currency}"  />
+                                <DataGridTextColumn Header="Date" Binding="{Binding date}" />
+                                <DataGridTextColumn Header="Good_in_Stock" Binding="{Binding obj}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem.Content>
             </TabItem>
         </TabControl>
     </Grid>
