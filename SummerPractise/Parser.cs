@@ -25,7 +25,6 @@ namespace SummerPractise
             }
             currencyRatesNBU = JsonConvert.DeserializeObject<List<CurrencyRateNBU>>(jsonResponse);
         }
-
         public void FillListFromJSONToDateNBU(string date)
         {
             WebRequesterToAPI webRequesterToAPI = new WebRequesterToAPI();

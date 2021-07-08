@@ -30,13 +30,10 @@ namespace SummerPractise
         {
             request = WebRequest.Create(PrivatRequestToDate + DateTime.Today.Day + '.' + DateTime.Today.Month + '.' + DateTime.Today.Year);
         }
-
         public WebResponse GetResponse()
         {
             response = request.GetResponse();
             return response;
         }
-
-        
     }
 }
