@@ -53,11 +53,17 @@ namespace SummerPractise
                     {
                         //открыть окно(вкладку) редактирования
                         MessageBox.Show("Добро пожаловать в окно редактирования");
+                        MainWindow EditWIN = new MainWindow();
+                        EditWIN.Content = new EditPage();
+                        EditWIN.Show();
                     }
-                    else if (u.order_permission)
+                    if (u.order_permission)
                     {
                         //открыть окно(вкладку) заказа
                         MessageBox.Show("Добро пожаловать в окно заказа");
+                        MainWindow OrderWIN = new MainWindow();
+                        OrderWIN.Content = new OrderPage();
+                        OrderWIN.Show();
                     }
                     else
                     {

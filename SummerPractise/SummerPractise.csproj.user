@@ -10,7 +10,13 @@
     <Compile Update="AdminPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="EditPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="FinalWin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="OrderPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -18,10 +24,16 @@
     <Page Update="AdminPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="EditPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="FinalWin.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OrderPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
