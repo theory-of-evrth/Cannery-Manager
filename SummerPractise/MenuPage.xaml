@@ -8,7 +8,51 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MenuPage">
 
-    <Grid>
-        
+    <Grid Background="#F7B739">
+        <Border BorderThickness="1" CornerRadius="8,8,3,3" Margin="152,15,166,15" Background="#fff">
+            <StackPanel>
+                <TextBlock Text="Консервный менеджер" 
+                   FontSize="26" 
+                   FontWeight="Normal" 
+                   HorizontalAlignment="Center" 
+                   
+                   FontStyle="Italic"
+                   />
+                <TextBlock Text="Меню" 
+                   FontSize="35" 
+                   FontWeight="Bold" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="10"
+                    />
+                <Button 
+                Content="Админская панель" 
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" 
+                Click="Admin_Button" 
+                FontSize="20" 
+                Width="298" Height="65"/>
+                <Button 
+                Content="Бухгалтерия" 
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" 
+                Click="ToEdit_Button"  
+                FontSize="20" 
+                Width="302" 
+                Margin="10"
+                Height="65"/>
+                <Button 
+                Content="Оформить заказ" 
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" 
+                Click="Order_Button" 
+                FontSize="20"
+                Width="300" Height="56"/>
+                <Button 
+                Content="Посмотреть данные" 
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" 
+                Click="ToFinal_Button" 
+                FontSize="20"
+                Margin="10"
+                Width="300" Height="62"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>

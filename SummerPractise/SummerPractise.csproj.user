@@ -16,6 +16,9 @@
     <Compile Update="FinalWin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MenuPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="OrderPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="OrderPage.xaml">

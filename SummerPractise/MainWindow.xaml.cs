@@ -48,7 +48,11 @@ namespace SummerPractise
                 if (u.name == login && u.password == password)
                 {
                     MessageBox.Show($"Успешный логин, человек с id {u.id}");
-
+                    MainWindow MenuWIN = new MainWindow();
+                    MenuWIN.Content = new MenuPage();
+                    this.Close();
+                    MenuWIN.Show();
+                    /*
                     if (u.edit_permission)
                     {
                         //открыть окно(вкладку) редактирования
@@ -72,7 +76,7 @@ namespace SummerPractise
                         MainWindow finalWIN = new MainWindow();
                         finalWIN.Content = new FinalWinXaml();
                         finalWIN.Show();
-                    }
+                    } */
                 }  
             }
         }

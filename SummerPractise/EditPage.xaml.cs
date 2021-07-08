@@ -11,8 +11,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+//global current_login;
+
 namespace SummerPractise
 {
+    
     /// <summary>
     /// Interaction logic for EditPage.xaml
     /// </summary>

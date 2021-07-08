@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SummerPractise;
 
 namespace SummerPractise
 {
@@ -21,6 +22,32 @@ namespace SummerPractise
         public MenuPage()
         {
             InitializeComponent();
+        }
+
+        private void ToFinal_Button(Object sender, RoutedEventArgs e)
+        {
+            MainWindow finalWIN = new MainWindow();
+            finalWIN.Content = new FinalWinXaml();
+            finalWIN.Show();
+        }
+        private void Admin_Button(Object sender, RoutedEventArgs e)
+        {
+            MainWindow navWIN = new MainWindow();
+            navWIN.Content = new AdminPage();
+            navWIN.Show();
+        }
+        private void ToEdit_Button(Object sender, RoutedEventArgs e)
+        {
+            MainWindow EditWIN = new MainWindow();
+            EditWIN.Content = new EditPage();
+            EditWIN.Show();
+        }
+
+        private void Order_Button(Object sender, RoutedEventArgs e)
+        {
+            MainWindow OrderWIN = new MainWindow();
+            OrderWIN.Content = new OrderPage();
+            OrderWIN.Show();
         }
     }
 }

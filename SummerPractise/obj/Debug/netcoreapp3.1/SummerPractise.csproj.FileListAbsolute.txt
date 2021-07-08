@@ -160,3 +160,5 @@ C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcorea
 C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\EditPage.baml
 C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\OrderPage.g.cs
 C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\OrderPage.baml
+C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\MenuPage.g.cs
+C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\MenuPage.baml
