@@ -23,7 +23,7 @@
                     <StackPanel>
                         <!-- Сюда таблицу фигачим -->
                         <Grid>
-                            <DataGrid Name="Users" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                            <DataGrid Name="UsersDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Name"  Binding="{Binding name}"/>
                                     <DataGridCheckBoxColumn Header="Order Permission" Binding="{Binding order_permission}" />
@@ -46,6 +46,28 @@
                         <TextBlock Margin="10">Подтверждение</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <!--  -->
+                        <Grid>
+                            <DataGrid Name="ChangesDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="User"  Binding="{Binding user.name}"/>
+                                    <DataGridTextColumn Header="Type" Binding="{Binding type}" />
+                                    <DataGridTextColumn Header="Product" Binding="{Binding obj.id}"  />
+                                    <DataGridTextColumn Header="Value" Binding="{Binding value}" />
+                                    <DataGridTextColumn Header="New Value" Binding="{Binding new_value}" />
+                                    <DataGridTextColumn Header="Date" Binding="{Binding date}" />
+                                    <DataGridTextColumn Header="Approved" Binding="{Binding approved}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        <Button Content="Добавить пользователя" 
+                                HorizontalAlignment="Center" 
+                                Click="AddUser_Button" 
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+                    </StackPanel>
+                </TabItem.Content>
                 </TabItem>
             <TabItem x:Name="вetsTab">
                 <TabItem.Header>

@@ -15,5 +15,16 @@ namespace SummerPractise.Model
         public double buy { get; set; }
         public double sale { get; set; }
         public string date { get; set; }
+        public Currency()
+        { }
+        public Currency(CurrencyRateNBU currencyRateNBU)
+        {
+            this.txt = currencyRateNBU.txt;
+            this.rate = currencyRateNBU.rate;
+            this.ccy = currencyRateNBU.cc;
+            this.buy = currencyRateNBU.rate;
+            this.sale = currencyRateNBU.rate;
+            this.date = currencyRateNBU.exchangedate;
+        }
     }
 }

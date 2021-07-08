@@ -24,6 +24,16 @@ namespace SummerPractise
         public MainWindow()
         {
             InitializeComponent();
+            DataBaseRequester dataBaseRequester = new DataBaseRequester();
+            
+            Parser parser = new Parser();
+            parser.FillListFromJSONToCurrentDayNBU();
+            foreach(var cur in parser.GetCurrencyRatesNBU())
+            {
+                Model.Currency currency = new Model.Currency(cur);
+                dataBaseRequester.MakeInsertRequest<Model.Currency>(currency);
+            }
+            
         }
         private void Button_Login(Object sender, RoutedEventArgs e)
         {
@@ -70,5 +80,6 @@ namespace SummerPractise
                 }  
             }
         }
+
     }
 }
