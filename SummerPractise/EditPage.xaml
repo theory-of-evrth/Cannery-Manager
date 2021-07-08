@@ -20,10 +20,43 @@
                 </TabItem.Header>
                 <TabItem.Content>
                     <StackPanel>
-                        
+                        <TextBlock Text="Оформить добавление товара" Background="Bisque"  FontSize="15" FontWeight="DemiBold" Margin="5" HorizontalAlignment="Center"/>
+                        <ComboBox ItemsSource="{Binding Provider_Offer}" Name="chooseProvider" Width="204">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Fill="{Binding id}" Width="16" Height="16" Margin="0,2,5,2" />
+                                        <TextBlock Text="{Binding id}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <TextBox x:Name="howmany" Background="Bisque"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Width="89" Height="31" RenderTransformOrigin="0.5,0.5">
+                            <TextBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-0.249"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBox.RenderTransform>
+                        </TextBox>
+
                         <Button Content="Отправить запрос" 
                                 Click="AddPendingGoods_Button" 
                                 Style="{StaticResource MaterialDesignFlatButton}" />
+                        <DataGrid x:Name="ProviderOffers_Datagrid" 
+                                    ItemsSource="{Binding}" 
+                                    AutoGenerateColumns="False" 
+                                  Width="300"
+                                  Height="300">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="id" Binding="{Binding id}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="name" Binding="{Binding user.name}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="price" Binding="{Binding price}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="id" Binding="{Binding obj.id}" IsReadOnly="True"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
 
                     </StackPanel>
                 </TabItem.Content>
@@ -38,6 +71,7 @@
                 <Button Content="Отправить запрос" 
                                 Click="DeletePendingGoods_Button" 
                                 Style="{StaticResource MaterialDesignFlatButton}" />
+                
             </TabItem>
             <TabItem x:Name="вetsTab">
                 <TabItem.Header>
@@ -51,14 +85,15 @@
                                 Style="{StaticResource MaterialDesignFlatButton}" />
             </TabItem>
         </TabControl>
-        <DataGrid Name="Users" 
+        <DataGrid Name="Goods_Datagrid" 
                   ItemsSource="{Binding}" 
                   AutoGenerateColumns="False" Width="300" HorizontalAlignment="Right" Margin="15" Height="350">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name"  Binding="{Binding name}"/>
-                <DataGridCheckBoxColumn Header="Order Permission" Binding="{Binding order_permission}" />
-                <DataGridCheckBoxColumn Header="Edit Permission" Binding="{Binding edit_permission}"  />
-                <DataGridCheckBoxColumn Header="Is provider" Binding="{Binding is_provider}" />
+                <DataGridTextColumn Header="id" Binding="{Binding id}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="name" Binding="{Binding name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="price" Binding="{Binding price}" IsReadOnly="True" />
+                <DataGridTextColumn Header="description" Binding="{Binding description}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="num" Binding="{Binding num}" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
