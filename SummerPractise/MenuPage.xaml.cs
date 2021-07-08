@@ -21,6 +21,7 @@ namespace SummerPractise
     public partial class MenuPage : Page
     {
         readonly StorageContext db;
+
         public MenuPage()
         {
             InitializeComponent();
@@ -36,22 +37,73 @@ namespace SummerPractise
         }
         private void Admin_Button(Object sender, RoutedEventArgs e)
         {
-            MainWindow navWIN = new MainWindow();
-            navWIN.Content = new AdminPage();
-            navWIN.Show();
+            if (Current_User.id == 666)
+            {
+                MainWindow navWIN = new MainWindow();
+                navWIN.Content = new AdminPage();
+                navWIN.Show();
+            } 
+            else
+            {
+                MessageBox.Show("Извините, но у вас нет админских прав!");
+            }
         }
         private void ToEdit_Button(Object sender, RoutedEventArgs e)
         {
-            MainWindow EditWIN = new MainWindow();
-            EditWIN.Content = new EditPage();
-            EditWIN.Show();
+            if (Current_User.id == 666)
+            {
+                MainWindow EditWIN = new MainWindow();
+                EditWIN.Content = new EditPage();
+                EditWIN.Show();
+            }
+
+            StorageContext db = new StorageContext();
+            var users = db.Users;
+            foreach (User u in users)
+            {
+                if (u.id == Current_User.id)
+                {
+                    if (u.edit_permission)
+                    {
+                        MainWindow EditWIN = new MainWindow();
+                        EditWIN.Content = new EditPage();
+                        EditWIN.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Извините, но у вас нет прав на редактирование! Кажется, вы не бухгалтер, чтобы сюда заходить.");
+                    }
+                }
+            }
         }
 
         private void Order_Button(Object sender, RoutedEventArgs e)
         {
-            MainWindow OrderWIN = new MainWindow();
-            OrderWIN.Content = new OrderPage();
-            OrderWIN.Show();
+            if (Current_User.id == 666)
+            {
+                MainWindow OrderWIN = new MainWindow();
+                OrderWIN.Content = new OrderPage();
+                OrderWIN.Show();
+            }
+
+            StorageContext db = new StorageContext();
+            var users = db.Users;
+            foreach (User u in users)
+            {
+                if (u.id == Current_User.id)
+                {
+                    if (u.edit_permission)
+                    {
+                        MainWindow OrderWIN = new MainWindow();
+                        OrderWIN.Content = new OrderPage();
+                        OrderWIN.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Извините, но у вас нет прав на оформление заказов!");
+                    }
+                }
+            }
         }
     }
 }

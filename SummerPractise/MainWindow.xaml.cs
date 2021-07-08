@@ -29,18 +29,25 @@ namespace SummerPractise
         {
             string login = TBLogin.Text;
             string password = PassBox.Password;
-
+            
+        
             if (login == "root" && password == "root")
             {
+                Current_User.id = 666;
+                MainWindow MenuWIN = new MainWindow();
+                MenuWIN.Content = new MenuPage();
+                this.Close();
+                MenuWIN.Show();
+                /*
                 //переход в админскую
                 MessageBox.Show("Добро пожаловать, хозяин!");
                 //var AdminPage = new AdminPage();
                 //AdminPage.Show();
                 MainWindow navWIN = new MainWindow();
                 navWIN.Content = new AdminPage();
-                navWIN.Show();
+                navWIN.Show(); */
             }
-
+        
             StorageContext db = new StorageContext();
             var users = db.Users;
             foreach (User u in users)
