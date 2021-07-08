@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\
+D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\
 SummerPractise
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\App.xaml
-6277832444
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+D:\repos\SummerPractise\SummerPractise\App.xaml
+61892640997
 
-23-2132793529
-2201803112169
+231784762498
+220-2070850725
 AdminPage.xaml;EditPage.xaml;FinalWin.xaml;MainWindow.xaml;MenuPage.xaml;OrderPage.xaml;
 
 False

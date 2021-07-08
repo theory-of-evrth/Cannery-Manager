@@ -162,3 +162,11 @@ C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcorea
 C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\OrderPage.baml
 C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\MenuPage.g.cs
 C:\Users\catsv\Documents\GitHub\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\MenuPage.baml
+D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\EditPage.g.cs
+D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\FinalWin.g.cs
+D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\MenuPage.g.cs
+D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\OrderPage.g.cs
+D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\EditPage.baml
+D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\FinalWin.baml
+D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\MenuPage.baml
+D:\repos\SummerPractise\SummerPractise\obj\Debug\netcoreapp3.1\OrderPage.baml
