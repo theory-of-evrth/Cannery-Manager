@@ -50,11 +50,11 @@
                     <StackPanel>
                         <!--  -->
                         <Grid Height="300">
-                            <DataGrid Name="ChangesDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                            <DataGrid Name="ChangesDataTable" AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="User"  Binding="{Binding user.name}"/>
                                     <DataGridTextColumn Header="Type" Binding="{Binding type}" />
-                                    <DataGridTextColumn Header="Product" Binding="{Binding obj.id}"  />
+                                    <DataGridTextColumn Header="Product" Binding="{Binding obj.name}"  />
                                     <DataGridTextColumn Header="Value" Binding="{Binding value}" />
                                     <DataGridTextColumn Header="New Value" Binding="{Binding new_value}" />
                                     <DataGridTextColumn Header="Date" Binding="{Binding date}" />

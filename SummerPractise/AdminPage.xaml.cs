@@ -32,10 +32,15 @@ namespace SummerPractise
             IQueryable<Change> changes = from change in db.Changes
                                                where change.approved == false
                                                select change;
+
+            db.Goods_In_Stocks.Load();
             //db.Changes.Load();
             //ChangesDataTable.ItemsSource = changes;
-            ObservableCollection<Model.Change> changesCollection = new ObservableCollection<Model.Change>(changes);
-            ChangesDataTable.DataContext = changesCollection;
+            //ObservableCollection<Model.Change> changesCollection = new ObservableCollection<Model.Change>(changes);
+            //ChangesDataTable.DataContext = changesCollection;
+            db.Changes.Load();
+            ChangesDataTable.ItemsSource = db.Changes.Local.ToBindingList();
+
 
             db.Provider_Offers.Load();
             ProvidersDataTable.ItemsSource = db.Provider_Offers.Local.ToBindingList();
