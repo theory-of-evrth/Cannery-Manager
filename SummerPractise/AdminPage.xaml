@@ -1,0 +1,51 @@
+﻿<Page x:Class="SummerPractise.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SummerPractise"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminPage">
+
+    <Grid Background="#F7B739">
+        <TextBlock Text="Администрация" FontSize="25" FontWeight="Bold" Margin="450 0 0 0" />
+        
+        <TabControl x:Name="products">
+            <TabItem x:Name="smartphonesTab">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="10" >Пользователи</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <!-- Сюда таблицу фигачим -->
+                        
+                        <Button Content="Добавить пользователя" 
+                                HorizontalAlignment="Center" 
+                                Click="AddUser_Button" 
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="tabletsTab">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Height="10" Width="10" Fill="Purple" />
+                        <TextBlock Margin="10">Подтверждение</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                </TabItem>
+            <TabItem x:Name="вetsTab">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Height="10" Width="10" Fill="Purple" />
+                        <TextBlock Margin="10">Поставщики</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

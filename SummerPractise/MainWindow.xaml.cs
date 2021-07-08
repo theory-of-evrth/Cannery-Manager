@@ -34,7 +34,11 @@ namespace SummerPractise
             {
                 //переход в админскую
                 MessageBox.Show("Добро пожаловать, хозяин!");
-
+                //var AdminPage = new AdminPage();
+                //AdminPage.Show();
+                MainWindow navWIN = new MainWindow();
+                navWIN.Content = new AdminPage();
+                navWIN.Show();
             }
 
             StorageContext db = new StorageContext();
