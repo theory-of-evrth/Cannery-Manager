@@ -7,12 +7,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AdminPage">
-
     <Grid Background="#F7B739">
         <TextBlock Text="Администрация" FontSize="25" FontWeight="Bold" Margin="450 0 0 0" />
 
-        <TabControl x:Name="products">
-            <TabItem x:Name="smartphonesTab">
+        <TabControl x:Name="Actions">
+            <TabItem x:Name="UserTab">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="10" Width="10" Fill="Black" />
@@ -39,7 +38,7 @@
                     </StackPanel>
                 </TabItem.Content>
             </TabItem>
-            <TabItem x:Name="tabletsTab">
+            <TabItem x:Name="AgreementsTab">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Rectangle Height="10" Width="10" Fill="Purple" />
@@ -69,7 +68,7 @@
                     </StackPanel>
                 </TabItem.Content>
                 </TabItem>
-            <TabItem x:Name="вetsTab">
+            <TabItem x:Name="ProvidersTab">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Rectangle Height="10" Width="10" Fill="Purple" />
@@ -77,17 +76,23 @@
                     </StackPanel>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <Grid>
-                        <DataGrid Name="ProvidersDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="User"  Binding="{Binding user.name}"/>
-                                <DataGridTextColumn Header="Price" Binding="{Binding price}" />
-                                <DataGridTextColumn Header="Currency" Binding="{Binding currency.ccy}"  />
-                                <DataGridTextColumn Header="Date" Binding="{Binding date}" />
-                                <DataGridTextColumn Header="Good_in_Stock" Binding="{Binding obj.name}" />
-                            </DataGrid.Columns>
-                        </DataGrid>
-                    </Grid>
+                    <StackPanel>
+                        <Grid Height="300">
+                            <DataGrid Name="ProvidersDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="User"  Binding="{Binding user.name}"/>
+                                    <DataGridTextColumn Header="Price" Binding="{Binding price}" />
+                                    <DataGridTextColumn Header="Currency" Binding="{Binding currency.ccy}" />
+                                    <DataGridTextColumn Header="Date" Binding="{Binding date}" />
+                                    <DataGridTextColumn Header="Product" Binding="{Binding obj.name}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        <Button Content="Сохранить" 
+                                HorizontalAlignment="Center" 
+                                Click="SaveButton_Click"
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+                    </StackPanel>
                 </TabItem.Content>
             </TabItem>
         </TabControl>

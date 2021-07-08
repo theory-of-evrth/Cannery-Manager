@@ -34,7 +34,7 @@ namespace SummerPractise
                                                select change;
 
             db.Goods_In_Stocks.Load();
-            //db.Changes.Load();
+            db.Currencies.Load();
             //ChangesDataTable.ItemsSource = changes;
             //ObservableCollection<Model.Change> changesCollection = new ObservableCollection<Model.Change>(changes);
             //ChangesDataTable.DataContext = changesCollection;

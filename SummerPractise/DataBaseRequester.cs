@@ -3,21 +3,30 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using SummerPractise.Model;
 
 namespace SummerPractise
 {
-    class DataBaseRequester
+    public static class DataBaseRequester
     {
-        private Model.StorageContext storageContext;
-        public DataBaseRequester()
+        private static StorageContext storageContext;
+        static DataBaseRequester()
         {
-            storageContext = new Model.StorageContext();
+            storageContext = new StorageContext();
         }
 
-        public void MakeInsertRequest<TEntity>(TEntity entity)
+        public static void MakeInsertRequestCurrency(Currency currency)
         {
-            storageContext.Add(entity);
-            storageContext.SaveChanges();
+            if (FindOrAdd(currency) == null)
+            {
+                storageContext.Add(currency);
+                storageContext.SaveChanges();
+            }
+        }
+        public static Currency FindOrAdd(Currency currency)
+        {
+            return storageContext.Currencies.Find(currency.id)
+                ?? null;
         }
     }
 }

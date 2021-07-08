@@ -24,6 +24,14 @@ namespace SummerPractise
         public MainWindow()
         {
             InitializeComponent();
+            
+            Parser parser = new Parser();
+            parser.FillListFromJSONToCurrentDayNBU();
+            foreach(var cur in parser.GetCurrencyRatesNBU())
+            {
+                Currency currency = new Currency(cur);
+                DataBaseRequester.MakeInsertRequestCurrency(currency);
+            }
         }
         private void Button_Login(Object sender, RoutedEventArgs e)
         {

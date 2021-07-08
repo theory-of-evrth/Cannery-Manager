@@ -19,6 +19,7 @@ namespace SummerPractise.Model
         { }
         public Currency(CurrencyRateNBU currencyRateNBU)
         {
+            this.id = currencyRateNBU.r030;
             this.txt = currencyRateNBU.txt;
             this.rate = currencyRateNBU.rate;
             this.ccy = currencyRateNBU.cc;
