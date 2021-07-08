@@ -22,8 +22,6 @@ namespace SummerPractise.Model
             this.txt = currencyRateNBU.txt;
             this.rate = currencyRateNBU.rate;
             this.ccy = currencyRateNBU.cc;
-            this.buy = currencyRateNBU.rate;
-            this.sale = currencyRateNBU.rate;
             this.date = currencyRateNBU.exchangedate;
         }
     }

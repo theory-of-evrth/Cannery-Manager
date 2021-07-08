@@ -39,6 +39,7 @@ namespace SummerPractise
                                                select change;
             ObservableCollection<Model.Change> changesCollection = new ObservableCollection<Model.Change>(changes);
             ChangesDataTable.DataContext = changesCollection;
+            storageContext.SaveChanges();
         }
         private void AddUser_Button(Object sender, RoutedEventArgs e)
         {
