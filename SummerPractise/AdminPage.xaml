@@ -84,7 +84,7 @@
                                 <DataGridTextColumn Header="Price" Binding="{Binding price}" />
                                 <DataGridTextColumn Header="Currency" Binding="{Binding currency.ccy}"  />
                                 <DataGridTextColumn Header="Date" Binding="{Binding date}" />
-                                <DataGridTextColumn Header="Good_in_Stock" Binding="{Binding obj}" />
+                                <DataGridTextColumn Header="Good_in_Stock" Binding="{Binding obj.name}" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
