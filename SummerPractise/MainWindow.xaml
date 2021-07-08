@@ -10,10 +10,14 @@
     <Grid Background="#F7B739">
         <Border MinWidth="400" Margin="15" Background="#fff" VerticalAlignment="Center" Padding="40" MaxWidth="600" CornerRadius="20">
             <StackPanel>
-                <TextBlock Text="SKLADV-1.001" FontSize="30" FontWeight="Bold" Margin="160 0 0 0" />
-                <TextBox materialDesign:HintAssist.Hint="Введите логин" Name="TBLogin"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                <PasswordBox materialDesign:HintAssist.Hint="Введите пароль" Name="PassBox" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                <TextBlock Text="Консервный менеджер" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" />
+                <TextBox materialDesign:HintAssist.Hint="Введите логин" x:Name="TBLogin"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <PasswordBox materialDesign:HintAssist.Hint="Введите пароль" x:Name="PassBox" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
                 <Grid Margin="20 10 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="453*"/>
+                        <ColumnDefinition Width="47*"/>
+                    </Grid.ColumnDefinitions>
                     <Button HorizontalAlignment="Left" Content="Войти в систему" Style="{StaticResource MaterialDesignFlatButton}" Click="Button_Login" Margin="166,0,0,0"/>
                 </Grid>
             </StackPanel>

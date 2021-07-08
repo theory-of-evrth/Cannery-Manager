@@ -26,11 +26,12 @@ namespace SummerPractise
         }
         private void Button_Login(Object sender, RoutedEventArgs e)
         {
-            string login = TextBoxLogin.Text.Trim();
-            string password = PasswordBox.Password.Trim();
+            //User user = new User(...);
+            string login = TBLogin.Text.Trim();
+            string password = PassBox.Password.Trim();
             // какой-нибудь запрос в бд
             //try?  MakeLoginRequest(login, password);
-
+            
         }
     }
 }
