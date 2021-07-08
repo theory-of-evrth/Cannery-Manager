@@ -23,7 +23,7 @@
                     <StackPanel>
                         <!-- Сюда таблицу фигачим -->
                         <Grid>
-                            <DataGrid Name="Users" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                            <DataGrid Name="Users"  AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Name"  Binding="{Binding name}"/>
                                     <DataGridCheckBoxColumn Header="Order Permission" Binding="{Binding order_permission}" />
@@ -35,6 +35,10 @@
                         <Button Content="Добавить пользователя" 
                                 HorizontalAlignment="Center" 
                                 Click="AddUser_Button" 
+                                Style="{StaticResource MaterialDesignFlatButton}" />                        
+                        <Button Content="Сохранить" 
+                                HorizontalAlignment="Center" 
+                                Click="SaveButton_Click" 
                                 Style="{StaticResource MaterialDesignFlatButton}" />
                     </StackPanel>
                 </TabItem.Content>

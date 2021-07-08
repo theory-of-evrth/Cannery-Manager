@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SummerPractise.Model;
 
 namespace SummerPractise
 {
@@ -21,17 +22,22 @@ namespace SummerPractise
     /// </summary>
     public partial class AdminPage : Page
     {
+        StorageContext db;
         public AdminPage()
         {
             InitializeComponent();
-            Model.StorageContext storageContext = new Model.StorageContext();
-            ObservableCollection<Model.User> users = new ObservableCollection<Model.User>(storageContext.Users);
-            Users.DataContext = users;
+            db = new StorageContext();
+            db.Users.Load();
+            Users.ItemsSource = db.Users.Local.ToBindingList();
         }
 
         private void AddUser_Button(Object sender, RoutedEventArgs e)
         {
+        }
 
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            db.SaveChanges();
         }
     }
 }
