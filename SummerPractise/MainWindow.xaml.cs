@@ -25,10 +25,6 @@ namespace SummerPractise
         {
             InitializeComponent();
         }
-        class Current_User
-        {
-            public static int id { get; set; }
-        }
         private void Button_Login(Object sender, RoutedEventArgs e)
         {
             string login = TBLogin.Text;

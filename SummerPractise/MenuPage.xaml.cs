@@ -29,7 +29,7 @@ namespace SummerPractise
         private void ToFinal_Button(Object sender, RoutedEventArgs e)
         {
             
-            //MessageBox.Show($"Успешный логин, человек с id {Current_User.id}");
+            MessageBox.Show($"Успешный логин, человек с id {Current_User.id}");
             MainWindow finalWIN = new MainWindow();
             finalWIN.Content = new FinalWinXaml();
             finalWIN.Show();
