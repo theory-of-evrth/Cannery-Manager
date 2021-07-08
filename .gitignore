@@ -335,3 +335,4 @@ ASALocalRun/
 SummerPractise/obj/Debug/netcoreapp3.1/SummerPractise.designer.runtimeconfig.json
 *.cache
 *.cache
+.vs/SummerPractise/v16/.suo
