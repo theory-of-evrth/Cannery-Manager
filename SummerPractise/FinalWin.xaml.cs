@@ -5,12 +5,12 @@ using SummerPractise.Model;
 
 namespace SummerPractise
 {
-    public class DataObject
-    {
-        public int A { get; set; }
-        public int B { get; set; }
-        public int C { get; set; }
-    }
+    //public class DataObject
+    //{
+    //    public int A { get; set; }
+    //    public int B { get; set; }
+    //    public int C { get; set; }
+    //}
     public partial class FinalWinXaml : Page
     {
         public FinalWinXaml()
