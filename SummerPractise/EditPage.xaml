@@ -93,7 +93,7 @@
                         </TextBox>
 
                         <Button Content="Отправить запрос" 
-                                Click="AddPendingGoods_Button" 
+                                Click="DeletePendingGoods_Button" 
                                 Style="{StaticResource MaterialDesignFlatButton}" />
                     </StackPanel>
                 </TabItem.Content>
@@ -105,9 +105,27 @@
                         <TextBlock Margin="10">Редактирование</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Button Content="Отправить запрос" 
+                <TabItem.Content>
+                    <StackPanel>
+                        <Label Content="Оформить изменение товара"/>
+                        <ComboBox x:Name="good">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Fill="{Binding id}" Width="16" Height="16" Margin="0,2,5,2" />
+                                        <TextBlock Text="{Binding id}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <Label Content="Уважаемый, вводите в формате поле:значение"/>
+                        <TextBox x:Name="oldvalue" />
+                        <TextBox x:Name="newvalue"/>
+                        <Button Content="Отправить запрос" 
                                 Click="EditPendingGoods_Button" 
-                                Style="{StaticResource MaterialDesignFlatButton}" />
+                        Style="{StaticResource MaterialDesignFlatButton}" Width="380" />
+                    </StackPanel>
+                </TabItem.Content>
             </TabItem>
         </TabControl>
         <DataGrid Name="Goods_Datagrid" 

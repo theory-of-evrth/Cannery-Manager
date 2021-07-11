@@ -10,12 +10,45 @@
 
     <Grid Background="#F7B739">
         <TextBlock Text="Оформление заказа" FontSize="25" FontWeight="Bold" Margin="250 0 0 0" />
-        <Button Content="Добавить товар" HorizontalAlignment="Left" Margin="25,300,0,118" Click="Button_Click" />
-        <Button Content="Удалить товар" HorizontalAlignment="Right" Margin="0,300,10,118" Width="137"/>
-        <DataGrid Name="AllGoods" HorizontalAlignment="Left" Margin="25,86,0,0" VerticalAlignment="Top" Height="183" Width="361" DragEnter="AllGoods_DragEnter" PreviewMouseLeftButtonDown="dataGrid_PreviewMouseLeftButtonDown" PreviewMouseMove="List_MouseMove"/>
-        <TextBlock Text="Общая сумма заказа: " FontSize="25" FontWeight="Bold" Margin="462,347,62,0"/>
-        <DataGrid x:Name="Basket" HorizontalAlignment="Left" Margin="429,86,0,0" VerticalAlignment="Top" Height="183" Width="361" DragEnter="DropList_DragEnter" Drop="DropList_Drop" AllowDrop="True"/>
+        <DataGrid 
+            Name="AllGoods" 
+            HorizontalAlignment="Left" 
+            Margin="25,86,0,0" 
+            VerticalAlignment="Top" 
+            Height="183" 
+            Width="338" 
+            DragEnter="AllGoods_DragEnter" 
+            PreviewMouseLeftButtonDown="dataGrid_PreviewMouseLeftButtonDown" 
+            PreviewMouseMove="List_MouseMove" 
+            AllowDrop="True"
+            >
+            <DataGrid.DragIndicatorStyle>
+                <Style/>
+            </DataGrid.DragIndicatorStyle>
+        </DataGrid>
+        <TextBlock x:Name="priceText" Text="Общая сумма заказа: " FontSize="25" FontWeight="Bold" Margin="462,347,62,0"/>
+        <DataGrid x:Name="Basket" HorizontalAlignment="Left" Margin="368,86,0,0" VerticalAlignment="Top" Height="183" Width="422" DragEnter="DropList_DragEnter" Drop="DropList_Drop" AllowDrop="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="name" Binding="{Binding obj.name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="price" Binding="{Binding price}" IsReadOnly="True" />
+                <DataGridTextColumn Header="date" Binding="{Binding date}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Label Content="Все товары" HorizontalAlignment="Left" Margin="156,40,0,0" VerticalAlignment="Top" Height="46" Width="122" FontSize="20"/>
         <Label Content="Корзина" HorizontalAlignment="Left" Margin="563,40,0,0" VerticalAlignment="Top" Height="46" Width="122" FontSize="20"/>
+        <ComboBox x:Name="currencyBox" HorizontalAlignment="Left" Margin="321,291,0,0" VerticalAlignment="Top" Width="155" Background="White" Height="25" SelectionChanged="currencyBox_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Fill="{Binding txt}" Width="16" Height="16" Margin="0,2,5,2" />
+                        <TextBlock Text="{Binding txt}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Content="Отправить запрос" 
+                FontSize="20"
+                                Click="AddOrder_Button" 
+                                Margin="120,352,462,35" />
     </Grid>
 </Page>

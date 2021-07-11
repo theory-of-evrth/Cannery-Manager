@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Windows;
 using System.Windows.Controls;
 using SummerPractise.Model;
@@ -22,9 +23,17 @@ namespace SummerPractise
             //  list.Add(new DataObject() { A = 0, B = 0, C = 0 });
             // this.dataGrid1.ItemsSource = list; 
             
-            Model.StorageContext storageContext = new Model.StorageContext();
-            ObservableCollection<Model.Good_in_Stock> good_in_stocks = new ObservableCollection<Model.Good_in_Stock>(storageContext.Goods_In_Stocks);
+
+            StorageContext db = new StorageContext();
+            ObservableCollection<Good_in_Stock> good_in_stocks = 
+                new ObservableCollection<Good_in_Stock>(
+                    db.Goods_In_Stocks
+                );
             dataGrid1.DataContext = good_in_stocks;
+
+            db.Currencies.Load();
+            db.Orders.Load();
+            ordersGridView.ItemsSource = db.Orders.Local.ToBindingList();
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

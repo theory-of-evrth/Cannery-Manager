@@ -19,22 +19,37 @@ namespace SummerPractise
     /// <summary>
     /// Interaction logic for OrderPage.xaml
     /// </summary>
+    
     public partial class OrderPage : Page
     {
         StorageContext db;
-        BindingList<Good_in_Stock> basket = new BindingList<Good_in_Stock>();
+        BindingList<Order> basket = new BindingList<Order>();
+        double commonprice = 0;
         public OrderPage()
         {
             InitializeComponent();
             FillDataTables();
             AllGoods.IsReadOnly = true;
-            Basket.ItemsSource = basket;
+                Basket.ItemsSource = basket;
+
+            basket.ListChanged += Basket_ListChanged;
+
         }
+
+        private void Basket_ListChanged(object sender, ListChangedEventArgs e)
+        {
+            CalculatePrice();
+        }
+
         void FillDataTables()
         {
             db = new StorageContext();
             db.Goods_In_Stocks.Load();
             AllGoods.ItemsSource = db.Goods_In_Stocks.Local.ToBindingList();
+
+            db.Currencies.Load();
+            currencyBox.ItemsSource = db.Currencies.Local.ToBindingList();
+            currencyBox.SelectedIndex = 0;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -66,16 +81,15 @@ namespace SummerPractise
                 DataGridRow gridViewItem =
                     FindAnchestor<DataGridRow>((DependencyObject)e.OriginalSource);
 
-
-                Good_in_Stock good = 
-                    (Good_in_Stock) gridView.SelectedItem;
-
-                if (good != null && gridViewItem != null)
+                if (gridViewItem != null)
                 {
+                    Good_in_Stock good =
+                   (Good_in_Stock)gridViewItem.Item;
                     DataObject dragData = new DataObject("myFormat", good);
                     DragDrop.DoDragDrop(gridViewItem, dragData, DragDropEffects.Move);
                 }
             }
+
         }
 
         private static T FindAnchestor<T>(DependencyObject current)
@@ -107,9 +121,59 @@ namespace SummerPractise
             if (e.Data.GetDataPresent("myFormat"))
             {
                 Good_in_Stock good = e.Data.GetData("myFormat") as Good_in_Stock;
-                basket.Add(good);
-                e.Handled = true;
+
+                Currency currency = currencyBox.SelectedItem as Currency;
+                Order order = new Order()
+                {
+                    user = db.Users.Find(Current_User.id),
+                    obj = good,
+                    date = DateTime.Now.ToString(),
+                    price = Math.Round(good.price / currency.rate, 3),
+                    goods_num = 1,
+                    currency = currency,
+                };
+                basket.Add(order);
+                CalculatePrice();
+
             }
+        }
+
+        private void currencyBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Currency currency = currencyBox.SelectedItem as Currency;
+            foreach (Order order in basket)
+            {
+                order.currency = currency;
+                order.price = Math.Round(order.obj.price / currency.rate, 3);
+            }
+            Basket.ItemsSource = null;
+            Basket.ItemsSource = basket;
+            CalculatePrice();
+        }
+
+        private void AddOrder_Button(object sender, RoutedEventArgs e)
+        {
+            Currency currency = currencyBox.SelectedItem as Currency;
+
+            Order[] arr = new Order[basket.Count];
+            basket.CopyTo(arr, 0);
+            db.Orders.AddRange(arr);
+            db.SaveChanges();
+            CalculatePrice();
+            MessageBox.Show($"Вы совершили страшное преступление, к оплате {commonprice} {currency.txt}");
+
+            basket.Clear();
+            CalculatePrice();
+
+        }
+        void CalculatePrice()
+        {
+            commonprice = 0;
+            foreach (Order order in basket)
+            {
+                commonprice += order.price;
+            }
+            priceText.Text = $"Общая сумма заказа: \n {commonprice}";
         }
     }
 }

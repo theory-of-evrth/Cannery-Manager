@@ -40,6 +40,8 @@ namespace SummerPractise
             ProviderOffers_Datagrid.ItemsSource = db.Provider_Offers.Local.ToBindingList();
 
             chooseProvider.ItemsSource = db.Provider_Offers.Local.ToBindingList();
+            chooseItem.ItemsSource = db.Goods_In_Stocks.Local.ToBindingList();
+            good.ItemsSource = db.Goods_In_Stocks.Local.ToBindingList();
         }
         private void products_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -49,10 +51,21 @@ namespace SummerPractise
         {
             if (Current_User.id == 666)
             {
-                MessageBox.Show("Вы дебил чтоли!!!!! Ц ц ц ц!!!");
+                MessageBox.Show("Зачем администратору отправлять запросы самому себе? Пожалуйста, редактируйте всё, что хотите, напрямую.");
                 return;
             }
             Provider_Offer provider_Offer = chooseProvider.SelectedItem as Provider_Offer;
+
+            if (provider_Offer == null)
+            {
+                MessageBox.Show("Выберите предложение поставщика, которое вас заинтересовало.");
+                return;
+            }
+            if (howmany.Text.Length == 0)
+            {
+                MessageBox.Show("Выберите количество товара, которое хотите приобрести.");
+                return;
+            }
 
             db.Changes.Add(new Change() {
                 user = db.Users.Find(Current_User.id),
@@ -64,13 +77,75 @@ namespace SummerPractise
                 new_value = howmany.Text,
             });
             db.SaveChanges();
-            MessageBox.Show("Я вас добавил. А теперь нахер идите!!!!!");
+            MessageBox.Show("Ваш запрос был отправлен на рассмотрение.");
         }
         private void DeletePendingGoods_Button(Object sender, RoutedEventArgs e)
         {
+            if (Current_User.id == 666)
+            {
+                MessageBox.Show("Зачем администратору отправлять запросы самому себе? Пожалуйста, редактируйте всё, что хотите, напрямую.");
+                return;
+            }
+
+            Good_in_Stock our_good = chooseItem.SelectedItem as Good_in_Stock;
+
+            if (our_good == null)
+            {
+                MessageBox.Show("Выберите товар, который хотите удалить.");
+                return;
+            }
+            if (howmany1.Text.Length == 0)
+            {
+                MessageBox.Show("Выберите количество товара, которое хотите удалить.");
+                return;
+            }
+
+            _ = db.Changes.Add(new Change()
+            {
+                user = db.Users.Find(Current_User.id),
+                type = "Удаление товара",
+                obj = our_good,
+                date = DateTime.Now.ToString(),
+                approved = false,
+                value = (our_good.num).ToString(),
+                new_value = howmany1.Text,
+            });
+            db.SaveChanges();
+            MessageBox.Show("Ваш запрос был отправлен на рассмотрение.");
         }
         private void EditPendingGoods_Button(Object sender, RoutedEventArgs e)
         {
+            if (Current_User.id == 666)
+            {
+                MessageBox.Show("Зачем администратору отправлять запросы самому себе? Пожалуйста, редактируйте всё, что хотите, напрямую.");
+                return;
+            }
+
+            Good_in_Stock our_good = good.SelectedItem as Good_in_Stock;
+
+            if (our_good == null)
+            {
+                MessageBox.Show("Выберите товар, который хотите изменить.");
+                return;
+            }
+            if (oldvalue.Text.Length == 0 || newvalue.Text.Length == 0)
+            {
+                MessageBox.Show("Напишите значение, которое собираетесь изменить.");
+                return;
+            }
+
+            db.Changes.Add(new Change()
+            {
+                user = db.Users.Find(Current_User.id),
+                type = "Изменение товара",
+                obj = our_good,
+                date = DateTime.Now.ToString(),
+                approved = false,
+                value = oldvalue.Text,
+                new_value = newvalue.Text
+            });
+            db.SaveChanges();
+            MessageBox.Show("Ваш запрос был отправлен на рассмотрение.");
         }
     }
 }
