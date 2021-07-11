@@ -56,6 +56,7 @@
                 </TabItem.Header>
                 <TabItem.Content>
                     <StackPanel>
+                        <DataGrid x:Name="ordersGridView" Height="402"/>
                         <!-- таблица -->
 
                     </StackPanel>

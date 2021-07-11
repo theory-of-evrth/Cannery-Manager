@@ -26,6 +26,7 @@ namespace SummerPractise
         {
             InitializeComponent();
 
+
             Parser parser = new Parser();
             parser.FillListFromJSONToCurrentDayNBU();
             foreach(var cur in parser.GetCurrencyRatesNBU())

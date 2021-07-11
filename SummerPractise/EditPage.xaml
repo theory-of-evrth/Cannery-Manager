@@ -68,10 +68,35 @@
                         <TextBlock Margin="10">Удаление</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Button Content="Отправить запрос" 
+                <TabItem.Content>
+                    <StackPanel>
+                        <TextBlock Text="Оформить удаление товара" Background="Bisque"  FontSize="15" FontWeight="DemiBold" Margin="5" HorizontalAlignment="Center"/>
+                        <ComboBox Name="chooseItem" Width="204">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Fill="{Binding id}" Width="16" Height="16" Margin="0,2,5,2" />
+                                        <TextBlock Text="{Binding id}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <TextBox x:Name="howmany1" Background="Bisque" Margin="10" Width="89" Height="31" RenderTransformOrigin="0.5,0.5">
+                            <TextBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-0.249"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </TextBox.RenderTransform>
+                        </TextBox>
+
+                        <Button Content="Отправить запрос" 
                                 Click="DeletePendingGoods_Button" 
                                 Style="{StaticResource MaterialDesignFlatButton}" />
-                
+                    </StackPanel>
+                </TabItem.Content>
             </TabItem>
             <TabItem x:Name="вetsTab">
                 <TabItem.Header>
@@ -80,9 +105,27 @@
                         <TextBlock Margin="10">Редактирование</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Button Content="Отправить запрос" 
+                <TabItem.Content>
+                    <StackPanel>
+                        <Label Content="Оформить изменение товара"/>
+                        <ComboBox x:Name="good">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Fill="{Binding id}" Width="16" Height="16" Margin="0,2,5,2" />
+                                        <TextBlock Text="{Binding id}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <Label Content="Уважаемый, вводите в формате поле:значение"/>
+                        <TextBox x:Name="oldvalue" />
+                        <TextBox x:Name="newvalue"/>
+                        <Button Content="Отправить запрос" 
                                 Click="EditPendingGoods_Button" 
-                                Style="{StaticResource MaterialDesignFlatButton}" />
+                        Style="{StaticResource MaterialDesignFlatButton}" Width="380" />
+                    </StackPanel>
+                </TabItem.Content>
             </TabItem>
         </TabControl>
         <DataGrid Name="Goods_Datagrid" 
