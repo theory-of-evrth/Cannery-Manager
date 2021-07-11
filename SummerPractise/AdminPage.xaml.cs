@@ -72,6 +72,7 @@ namespace SummerPractise
                 ApproveChange(ch);
             }
             FillChangesDataTable();
+            FillGoodsDataTable();
         }
 
 
@@ -110,7 +111,34 @@ namespace SummerPractise
                     {
                         MessageBox.Show(e.Message);
                     }
-                }   
+                }
+                else if(change.type == "Изменение товара")
+                {
+                    try
+                    {
+                        string[] changes = change.new_value.Split(':');
+                        if (changes[0] == "name")
+                        {
+                            db.Goods_In_Stocks.Find(change.obj.id).name = changes[1];
+                        }
+                        else if(changes[0] == "price")
+                        {
+                            db.Goods_In_Stocks.Find(change.obj.id).price = Convert.ToDouble(changes[1]);
+                        }
+                        else if (changes[0] == "description")
+                        {
+                            db.Goods_In_Stocks.Find(change.obj.id).description = changes[1];
+                        }
+                        else if (changes[0] == "num")
+                        {
+                            db.Goods_In_Stocks.Find(change.obj.id).num = Convert.ToInt32(changes[1]);
+                        }
+                    }
+                    catch(Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+                }
             }
 
             db.SaveChanges();

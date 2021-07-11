@@ -43,10 +43,7 @@ namespace SummerPractise
             chooseItem.ItemsSource = db.Goods_In_Stocks.Local.ToBindingList();
             good.ItemsSource = db.Goods_In_Stocks.Local.ToBindingList();
         }
-        private void products_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
         private void AddPendingGoods_Button(Object sender, RoutedEventArgs e)
         {
             if (Current_User.id == 666)
@@ -110,6 +107,7 @@ namespace SummerPractise
                 value = (our_good.num).ToString(),
                 new_value = howmany1.Text,
             });
+
             db.SaveChanges();
             MessageBox.Show("Ваш запрос был отправлен на рассмотрение.");
         }

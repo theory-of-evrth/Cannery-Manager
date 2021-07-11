@@ -9,8 +9,12 @@
       Title="EditPage">
 
     <Grid Background="#F7B739">
-        <TextBlock Text="Бухгалтерия" FontSize="25" FontWeight="Bold" Margin="450 0 0 0" />
-        <TabControl x:Name="products" SelectionChanged="products_SelectionChanged" Margin="10,10,400,10">
+        <TextBlock Text="Бухгалтерия" 
+                   FontSize="25" 
+                   FontWeight="Bold" 
+                   Margin="450 0 0 0" />
+        <TabControl x:Name="products" 
+                    Margin="10,10,400,10">
             <TabItem x:Name="smartphonesTab">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -20,7 +24,12 @@
                 </TabItem.Header>
                 <TabItem.Content>
                     <StackPanel>
-                        <TextBlock Text="Оформить добавление товара" Background="Bisque"  FontSize="15" FontWeight="DemiBold" Margin="5" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Оформить добавление товара" 
+                                   Background="Bisque"  
+                                   FontSize="15" 
+                                   FontWeight="DemiBold" 
+                                   Margin="5" 
+                                   HorizontalAlignment="Center"/>
                         <ComboBox Name="chooseProvider" Width="204">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
@@ -31,30 +40,35 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-                        <TextBox x:Name="howmany" Background="Bisque" Margin="10" Width="89" Height="31" RenderTransformOrigin="0.5,0.5">
-                            <TextBox.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform Angle="-0.249"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </TextBox.RenderTransform>
-                        </TextBox>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Количество:"
+                                       VerticalAlignment="Center"
+                                       Margin="10"/>
+                            <TextBox x:Name="howmany" 
+                                    Background="Bisque" 
+                                    Margin="60,2,0,2" 
+                                    Width="89" 
+                                    Height="31" 
+                                    RenderTransformOrigin="0.5,0.5"
+                                    HorizontalAlignment="Center" />
+
+                        </StackPanel>
+
 
                         <Button Content="Отправить запрос" 
                                 Click="AddPendingGoods_Button" 
                                 Style="{StaticResource MaterialDesignFlatButton}" />
-                        <DataGrid x:Name="ProviderOffers_Datagrid" 
+                        <DataGrid   x:Name="ProviderOffers_Datagrid" 
                                     ItemsSource="{Binding}" 
                                     AutoGenerateColumns="False" 
-                                  Width="300"
-                                  Height="300">
+                                    Width="330"
+                                    Height="240"
+                                    IsReadOnly="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="id" Binding="{Binding id}" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="name" Binding="{Binding user.name}" IsReadOnly="True" />
-                                <DataGridTextColumn Header="price" Binding="{Binding price}" IsReadOnly="True" />
-                                <DataGridTextColumn Header="goods' id" Binding="{Binding obj.id}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Имя" Binding="{Binding user.name}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Цена" Binding="{Binding price}" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Товар" Binding="{Binding obj.name}" IsReadOnly="True"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
@@ -70,7 +84,12 @@
                 </TabItem.Header>
                 <TabItem.Content>
                     <StackPanel>
-                        <TextBlock Text="Оформить удаление товара" Background="Bisque"  FontSize="15" FontWeight="DemiBold" Margin="5" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Оформить списание товара" 
+                                   Background="Bisque" 
+                                   FontSize="15" 
+                                   FontWeight="DemiBold" 
+                                   Margin="5" 
+                                   HorizontalAlignment="Center"/>
                         <ComboBox Name="chooseItem" Width="204">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
@@ -119,18 +138,42 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                         <Label Content="Уважаемый, вводите в формате поле:значение"/>
-                        <TextBox x:Name="oldvalue" />
-                        <TextBox x:Name="newvalue"/>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
+                                <ComboBox>
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Rectangle Fill="{Binding id}" Width="16" Height="16" Margin="0,2,5,2" />
+                                                <TextBlock Text="{Binding id}" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                                <ComboBox ItemsSource="{Binding }"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical">
+                                <TextBox x:Name="oldvalue" />
+                                <TextBox x:Name="newvalue"/>
+                            </StackPanel>
+
+                        </StackPanel>
+                        
                         <Button Content="Отправить запрос" 
                                 Click="EditPendingGoods_Button" 
-                        Style="{StaticResource MaterialDesignFlatButton}" Width="380" />
+                                Style="{StaticResource MaterialDesignFlatButton}" 
+                                Width="380" />
                     </StackPanel>
                 </TabItem.Content>
             </TabItem>
         </TabControl>
         <DataGrid Name="Goods_Datagrid" 
                   ItemsSource="{Binding}" 
-                  AutoGenerateColumns="False" Width="300" HorizontalAlignment="Right" Margin="15" Height="350">
+                  AutoGenerateColumns="False" 
+                  Width="365" 
+                  HorizontalAlignment="Right" 
+                  Margin="0,50,15,10"
+                  IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="id" Binding="{Binding id}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="name" Binding="{Binding name}" IsReadOnly="True"/>

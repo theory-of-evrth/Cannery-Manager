@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SummerPractise"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="810"
       Title="FinalWindow">
 
 
@@ -26,21 +26,19 @@
                 <TabItem.Content>
 
                     <DataGrid AutoGenerateColumns="False" 
-                                        Height="800" 
+                                        Height="400" 
                                         HorizontalAlignment="Left" 
                                         Name="dataGrid1" 
                                         VerticalAlignment="Top" 
                                         Width="800"
                               ItemsSource="{Binding}">
 
-                        <DataGrid.Columns >
-
+                        <DataGrid.Columns>
                             <DataGridTextColumn Header = "ID" Binding="{Binding id}" MinWidth="80" IsReadOnly="True"/>
-                            <DataGridTextColumn Header = "Name" Binding="{Binding name}" MinWidth="80" IsReadOnly="True"/>
-                            <DataGridTextColumn  Header = "Price" Binding="{Binding price}" MinWidth="80" IsReadOnly="True"/>
-                            <DataGridTextColumn Header = "Description" Binding="{Binding description}" MinWidth="80" IsReadOnly="True"/>
-                            <DataGridTextColumn  Header = "Num" Binding="{Binding num}" MinWidth="80" IsReadOnly="True"/>
-
+                            <DataGridTextColumn Header = "Товар" Binding="{Binding name}" MinWidth="80" IsReadOnly="True"/>
+                            <DataGridTextColumn Header = "Цена" Binding="{Binding price}" MinWidth="80" IsReadOnly="True"/>
+                            <DataGridTextColumn Header = "Описание" Binding="{Binding description}" MinWidth="80" IsReadOnly="True"/>
+                            <DataGridTextColumn Header = "Количество" Binding="{Binding num}" MinWidth="80" IsReadOnly="True"/>
                         </DataGrid.Columns>
 
                     </DataGrid>
