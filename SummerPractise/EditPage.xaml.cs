@@ -28,7 +28,6 @@ namespace SummerPractise
         {
             InitializeComponent();
             FillDateTables();
-            chooseProvider.ItemsSource = typeof(Provider_Offer).GetProperties();
         }
 
         private void FillDateTables()
@@ -39,6 +38,8 @@ namespace SummerPractise
             Goods_Datagrid.ItemsSource = db.Goods_In_Stocks.Local.ToBindingList();
             db.Provider_Offers.Load();
             ProviderOffers_Datagrid.ItemsSource = db.Provider_Offers.Local.ToBindingList();
+
+            chooseProvider.ItemsSource = db.Provider_Offers.Local.ToBindingList();
         }
         private void products_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -46,6 +47,24 @@ namespace SummerPractise
         }
         private void AddPendingGoods_Button(Object sender, RoutedEventArgs e)
         {
+            if (Current_User.id == 666)
+            {
+                MessageBox.Show("Вы дебил чтоли!!!!! Ц ц ц ц!!!");
+                return;
+            }
+            Provider_Offer provider_Offer = chooseProvider.SelectedItem as Provider_Offer;
+
+            db.Changes.Add(new Change() {
+                user = db.Users.Find(Current_User.id),
+                type = "Добавление товара",
+                obj=provider_Offer.obj,
+                date= DateTime.Now.ToString(),
+                approved=false,
+                value = "-",
+                new_value = howmany.Text,
+            });
+            db.SaveChanges();
+            MessageBox.Show("Я вас добавил. А теперь нахер идите!!!!!");
         }
         private void DeletePendingGoods_Button(Object sender, RoutedEventArgs e)
         {

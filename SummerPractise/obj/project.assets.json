@@ -2174,23 +2174,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\catsv\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\master\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\catsv\\Documents\\GitHub\\SummerPractise\\SummerPractise\\SummerPractise.csproj",
+      "projectUniqueName": "D:\\учеба емое\\проганье\\летняя практика\\SummerPractise\\SummerPractise\\SummerPractise.csproj",
       "projectName": "SummerPractise",
-      "projectPath": "C:\\Users\\catsv\\Documents\\GitHub\\SummerPractise\\SummerPractise\\SummerPractise.csproj",
-      "packagesPath": "C:\\Users\\catsv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\catsv\\Documents\\GitHub\\SummerPractise\\SummerPractise\\obj\\",
+      "projectPath": "D:\\учеба емое\\проганье\\летняя практика\\SummerPractise\\SummerPractise\\SummerPractise.csproj",
+      "packagesPath": "C:\\Users\\master\\.nuget\\packages\\",
+      "outputPath": "D:\\учеба емое\\проганье\\летняя практика\\SummerPractise\\SummerPractise\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\catsv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\master\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

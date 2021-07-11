@@ -10,9 +10,11 @@
 
     <Grid Background="#F7B739">
         <TextBlock Text="Оформление заказа" FontSize="25" FontWeight="Bold" Margin="250 0 0 0" />
-        <Button Content="Добавить товар" HorizontalAlignment="Left" Margin="437,156,0,262" />
-        <Button Content="Удалить товар" HorizontalAlignment="Right" Margin="0,156,62,262" Width="137"/>
-        <DataGrid Name="dgv" HorizontalAlignment="Left" Margin="39,121,0,0" VerticalAlignment="Top" Height="319" Width="361"/>
-        <TextBlock Text="Общая сумма заказа: " FontSize="25" FontWeight="Bold" Margin="462,300,62,0"/>
+        <Button Content="Добавить товар" HorizontalAlignment="Left" Margin="25,300,0,118" />
+        <Button Content="Удалить товар" HorizontalAlignment="Right" Margin="0,300,10,118" Width="137"/>
+        <DataGrid Name="dgv" HorizontalAlignment="Left" Margin="25,86,0,0" VerticalAlignment="Top" Height="183" Width="361"/>
+        <TextBlock Text="Общая сумма заказа: " FontSize="25" FontWeight="Bold" Margin="462,347,62,0"/>
+        <DataGrid x:Name="dgv_Copy" HorizontalAlignment="Left" Margin="429,86,0,0" VerticalAlignment="Top" Height="183" Width="361"/>
+        <Label Content="Все товары" HorizontalAlignment="Left" Margin="156,40,0,0" VerticalAlignment="Top" Height="46" Width="122" FontSize="20"/>
     </Grid>
 </Page>

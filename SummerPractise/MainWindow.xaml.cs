@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,7 +25,7 @@ namespace SummerPractise
         public MainWindow()
         {
             InitializeComponent();
-            
+
             Parser parser = new Parser();
             parser.FillListFromJSONToCurrentDayNBU();
             foreach(var cur in parser.GetCurrencyRatesNBU())

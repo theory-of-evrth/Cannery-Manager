@@ -21,7 +21,7 @@
                 <TabItem.Content>
                     <StackPanel>
                         <TextBlock Text="Оформить добавление товара" Background="Bisque"  FontSize="15" FontWeight="DemiBold" Margin="5" HorizontalAlignment="Center"/>
-                        <ComboBox ItemsSource="{Binding Provider_Offer}" Name="chooseProvider" Width="204">
+                        <ComboBox Name="chooseProvider" Width="204">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -31,7 +31,7 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-                        <TextBox x:Name="howmany" Background="Bisque"  Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="10" Width="89" Height="31" RenderTransformOrigin="0.5,0.5">
+                        <TextBox x:Name="howmany" Background="Bisque" Margin="10" Width="89" Height="31" RenderTransformOrigin="0.5,0.5">
                             <TextBox.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -54,7 +54,7 @@
                                 <DataGridTextColumn Header="id" Binding="{Binding id}" IsReadOnly="True"/>
                                 <DataGridTextColumn Header="name" Binding="{Binding user.name}" IsReadOnly="True" />
                                 <DataGridTextColumn Header="price" Binding="{Binding price}" IsReadOnly="True" />
-                                <DataGridTextColumn Header="id" Binding="{Binding obj.id}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="goods' id" Binding="{Binding obj.id}" IsReadOnly="True"/>
                             </DataGrid.Columns>
                         </DataGrid>
 

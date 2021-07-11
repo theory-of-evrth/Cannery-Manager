@@ -12,8 +12,8 @@ namespace SummerPractise.Model
         public User user { get; set; }
         public string type { get; set; }
         public Good_in_Stock obj { get; set; }
-        public int value { get; set; }
-        public int new_value { get; set; }
+        public string value { get; set; }
+        public string new_value { get; set; }
         public string date { get; set; }
         public bool approved { get; set; }
     }
