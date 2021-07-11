@@ -24,31 +24,95 @@ namespace SummerPractise
         private void FillDateTables()
         {
             db = new StorageContext();
-            //ObservableCollection<User> users = new ObservableCollection<User>(storageContext.Users);
-            //UsersDataTable.DataContext = users;
-            db.Users.Load();
-            UsersDataTable.ItemsSource = db.Users.Local.ToBindingList();
-            
-            IQueryable<Change> changes = from change in db.Changes
-                                               where change.approved == false
-                                               select change;
-
-            db.Goods_In_Stocks.Load();
             db.Currencies.Load();
-            //ChangesDataTable.ItemsSource = changes;
-            //ObservableCollection<Model.Change> changesCollection = new ObservableCollection<Model.Change>(changes);
-            //ChangesDataTable.DataContext = changesCollection;
+
+
+            FillUsersDataTable(); // заполнение таблицы пользователей
+            FillChangesDataTable(); // заполнение таблицы изменений 
+            FillProvidersDataTable(); // заполнение таблицы поставщиков
+            FillGoodsDataTable(); // заполнение таблицы товаров
+        }
+        
+        private void FillUsersDataTable()
+        {
+            db.Users.Load();
+            UsersDataTable.ItemsSource = db.Users.Local.ToBindingList(); 
+        }
+        
+        private void FillChangesDataTable()
+        {
             db.Changes.Load();
-            ChangesDataTable.ItemsSource = db.Changes.Local.ToBindingList();
-
-
+            IQueryable<Change> changes = from change in db.Changes
+                                         where change.approved == false
+                                         select change;
+            ObservableCollection<Change> changesCollection = new ObservableCollection<Change>(changes);
+            ChangesDataTable.DataContext = changesCollection; 
+        }
+        
+        private void FillProvidersDataTable()
+        {
             db.Provider_Offers.Load();
-            ProvidersDataTable.ItemsSource = db.Provider_Offers.Local.ToBindingList();
-            //ObservableCollection<Provider_Offer> provider_Offers = new ObservableCollection<Provider_Offer>(db.Provider_Offers);
-            //ProvidersDataTable.DataContext = provider_Offers;
+            ProvidersDataTable.ItemsSource = db.Provider_Offers.Local.ToBindingList(); 
+        }
+        private void FillGoodsDataTable()
+        {
+            db.Goods_In_Stocks.Load();
+            GoodsDataTable.ItemsSource = db.Goods_In_Stocks.Local.ToBindingList();
         }
         private void SaveButton_Click(Object sender, RoutedEventArgs e)
         { 
+            db.SaveChanges();
+        }
+        private void SaveButtonApproves_Click(Object sender, RoutedEventArgs e)
+        {
+            db.SaveChanges();
+            db.Changes.Load();
+            foreach(var ch in db.Changes)
+            {
+                ApproveChange(ch);
+            }
+            FillChangesDataTable();
+        }
+
+
+        private void ApproveChange(Change change)
+        {
+            if(change.approved == true)
+            {
+                if(change.type == "Добавление товара")
+                {
+                    try
+                    {
+                        if (db.Goods_In_Stocks.Find(change.obj.id) != null)
+                        {
+                            db.Goods_In_Stocks.Find(change.obj.id).num = Convert.ToInt32(change.new_value);
+                        }
+                        else
+                        {
+                            db.Add(change.obj);
+                        }
+                    }
+                    catch(Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+                }
+                else if(change.type == "Удаление товара")
+                {
+                    try
+                    {
+                        if (db.Goods_In_Stocks.Find(change.obj.id) != null)
+                        {
+                            db.Goods_In_Stocks.Find(change.obj.id).num = Convert.ToInt32(change.new_value);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+                }   
+            }
+
             db.SaveChanges();
         }
     }

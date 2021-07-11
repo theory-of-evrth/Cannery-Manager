@@ -8,13 +8,11 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AdminPage">
     <Grid Background="#F7B739">
-        <TextBlock Text="Администрация" FontSize="25" FontWeight="Bold" Margin="450 0 0 0" />
-
         <TabControl x:Name="Actions">
             <TabItem x:Name="UserTab">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <Rectangle Height="10" Width="10" Fill="Purple" />
                         <TextBlock Margin="10" >Пользователи</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
@@ -24,10 +22,10 @@
                         <Grid Height="300">
                             <DataGrid Name="UsersDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Name"  Binding="{Binding name}"/>
-                                    <DataGridCheckBoxColumn Header="Order Permission" Binding="{Binding order_permission}" />
-                                    <DataGridCheckBoxColumn Header="Edit Permission" Binding="{Binding edit_permission}"  />
-                                    <DataGridCheckBoxColumn Header="Is provider" Binding="{Binding is_provider}" />
+                                    <DataGridTextColumn Header="Имя"  Binding="{Binding name}"/>
+                                    <DataGridCheckBoxColumn Header="Разрешение на заказ" Binding="{Binding order_permission}" />
+                                    <DataGridCheckBoxColumn Header="Разрешение на изменение" Binding="{Binding edit_permission}"  />
+                                    <DataGridCheckBoxColumn Header="Поставщик" Binding="{Binding is_provider}" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
@@ -49,21 +47,21 @@
                     <StackPanel>
                         <!--  -->
                         <Grid Height="300">
-                            <DataGrid Name="ChangesDataTable" AutoGenerateColumns="False" >
+                            <DataGrid Name="ChangesDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="User"  Binding="{Binding user.name}"/>
-                                    <DataGridTextColumn Header="Type" Binding="{Binding type}" />
-                                    <DataGridTextColumn Header="Product" Binding="{Binding obj.name}"  />
-                                    <DataGridTextColumn Header="Value" Binding="{Binding value}" />
-                                    <DataGridTextColumn Header="New Value" Binding="{Binding new_value}" />
-                                    <DataGridTextColumn Header="Date" Binding="{Binding date}" />
-                                    <DataGridCheckBoxColumn Header="Approved" Binding="{Binding approved}" />
+                                    <DataGridTextColumn Header="Имя"  Binding="{Binding user.name}"/>
+                                    <DataGridTextColumn Header="Тип" Binding="{Binding type}" />
+                                    <DataGridTextColumn Header="Товар" Binding="{Binding obj.name}"  />
+                                    <DataGridTextColumn Header="Было" Binding="{Binding value}" />
+                                    <DataGridTextColumn Header="Стало" Binding="{Binding new_value}" />
+                                    <DataGridTextColumn Header="Дата" Binding="{Binding date}" />
+                                    <DataGridCheckBoxColumn Header="Подтверждение" Binding="{Binding approved}" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
                         <Button Content="Сохранить" 
                                 HorizontalAlignment="Center" 
-                                Click="SaveButton_Click"
+                                Click="SaveButtonApproves_Click"
                                 Style="{StaticResource MaterialDesignFlatButton}" />
                     </StackPanel>
                 </TabItem.Content>
@@ -80,11 +78,38 @@
                         <Grid Height="300">
                             <DataGrid Name="ProvidersDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="User"  Binding="{Binding user.name}"/>
-                                    <DataGridTextColumn Header="Price" Binding="{Binding price}" />
-                                    <DataGridTextColumn Header="Currency" Binding="{Binding currency.ccy}" />
-                                    <DataGridTextColumn Header="Date" Binding="{Binding date}" />
-                                    <DataGridTextColumn Header="Product" Binding="{Binding obj.name}" />
+                                    <DataGridTextColumn Header="Имя"  Binding="{Binding user.name}"/>
+                                    <DataGridTextColumn Header="Цена" Binding="{Binding price}" />
+                                    <DataGridTextColumn Header="Валюта" Binding="{Binding currency.ccy}" />
+                                    <DataGridTextColumn Header="Дата" Binding="{Binding date}" />
+                                    <DataGridTextColumn Header="Товар" Binding="{Binding obj.name}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        <Button Content="Сохранить" 
+                                HorizontalAlignment="Center" 
+                                Click="SaveButton_Click"
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="GoodsInStock">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Width="10" Height="10" Fill="Purple" />
+                        <TextBlock Margin="10" Text="Товары"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <Grid Height="300">
+                            <DataGrid Name="GoodsDataTable" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="id"  Binding="{Binding id}"/>
+                                    <DataGridTextColumn Header="Имя товара" Binding="{Binding name}" />
+                                    <DataGridTextColumn Header="Цена" Binding="{Binding price}" />
+                                    <DataGridTextColumn Header="Описание" Binding="{Binding description}" />
+                                    <DataGridTextColumn Header="Количество" Binding="{Binding num}" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
