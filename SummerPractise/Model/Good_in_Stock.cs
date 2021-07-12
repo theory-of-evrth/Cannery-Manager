@@ -12,7 +12,7 @@ namespace SummerPractise.Model
         {
             this.id = obj.id;
             this.name = obj.name;
-            this.price = obj.price;
+            this.rel_price = obj.rel_price;
             this.description = obj.description;
             this.num = obj.num;
         }
@@ -23,8 +23,11 @@ namespace SummerPractise.Model
 
         public int id { get; set; }
         public string name { get; set; }
-        public double price { get; set; }
+        public double rel_price { get; set; }
         public string description { get; set; }
         public int num { get; set; }
+        public double dollar_price { get; set; }
+        public double coefficient { get; set; }
+        public string date { get; set; }
     }
 }

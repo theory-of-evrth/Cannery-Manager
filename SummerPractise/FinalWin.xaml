@@ -54,26 +54,22 @@
                 </TabItem.Header>
                 <TabItem.Content>
                     <StackPanel>
-                        <DataGrid x:Name="ordersGridView" Height="402"/>
+                        <DataGrid x:Name="ordersGridView" Height="402" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header = "ID" Binding="{Binding id}" MinWidth="80" IsReadOnly="True"/>
+                                <DataGridTextColumn Header = "Пользователь" Binding="{Binding user.name}" MinWidth="80" IsReadOnly="True"/>
+                                <DataGridTextColumn Header = "Цена" Binding="{Binding price}" MinWidth="80" IsReadOnly="True"/>
+                                <DataGridTextColumn Header = "Валюта" Binding="{Binding currency.txt}" MinWidth="80" IsReadOnly="True"/>
+                                <DataGridTextColumn Header = "Дата" Binding="{Binding date}" MinWidth="80" IsReadOnly="True"/>
+                                <DataGridTextColumn Header = "id объекта покупки" Binding="{Binding obj.id}" MinWidth="80" IsReadOnly="True"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
                         <!-- таблица -->
 
                     </StackPanel>
                 </TabItem.Content>
             </TabItem>
-            <TabItem x:Name="вetsTab">
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Ellipse Height="10" Width="10" Fill="Purple" />
-                        <TextBlock Margin="10">Просмотр курса валют</TextBlock>
-                    </StackPanel>
-                </TabItem.Header>
-                <TabItem.Content>
-                    <StackPanel>
-                        <!-- таблица -->
-
-                    </StackPanel>
-                </TabItem.Content>
-            </TabItem>
+            
 
         </TabControl>
 

@@ -139,7 +139,7 @@
                         </ComboBox>
                         <Label Content="Уважаемый, вводите в формате поле:значение"/>
                         <StackPanel Orientation="Horizontal">
-                            <StackPanel Orientation="Vertical">
+                            <!--<StackPanel Orientation="Vertical">
                                 <ComboBox>
                                     <ComboBox.ItemTemplate>
                                         <DataTemplate>
@@ -151,7 +151,7 @@
                                     </ComboBox.ItemTemplate>
                                 </ComboBox>
                                 <ComboBox ItemsSource="{Binding }"/>
-                            </StackPanel>
+                            </StackPanel>-->
                             <StackPanel Orientation="Vertical">
                                 <TextBox x:Name="oldvalue" />
                                 <TextBox x:Name="newvalue"/>

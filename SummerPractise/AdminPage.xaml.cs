@@ -123,7 +123,7 @@ namespace SummerPractise
                         }
                         else if(changes[0] == "price")
                         {
-                            db.Goods_In_Stocks.Find(change.obj.id).price = Convert.ToDouble(changes[1]);
+                            db.Goods_In_Stocks.Find(change.obj.id).rel_price = Convert.ToDouble(changes[1]);
                         }
                         else if (changes[0] == "description")
                         {

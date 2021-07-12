@@ -128,7 +128,7 @@ namespace SummerPractise
                     user = db.Users.Find(Current_User.id),
                     obj = good,
                     date = DateTime.Now.ToString(),
-                    price = Math.Round(good.price / currency.rate, 3),
+                    price = Math.Round(good.rel_price / currency.rate, 3),
                     goods_num = 1,
                     currency = currency,
                 };
@@ -144,7 +144,7 @@ namespace SummerPractise
             foreach (Order order in basket)
             {
                 order.currency = currency;
-                order.price = Math.Round(order.obj.price / currency.rate, 3);
+                order.price = Math.Round(order.obj.rel_price / currency.rate, 3);
             }
             Basket.ItemsSource = null;
             Basket.ItemsSource = basket;
