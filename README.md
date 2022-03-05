@@ -47,7 +47,7 @@ The program runs on the computer of an accountant, administrator, or any user wh
 How to install the Cannery Manager on your computer? 
 
 ``` 
-git clone https://github.com/theory-of-evrth/SummerPractise.git
+git clone https://github.com/theory-of-evrth/Cannery-Manager.git
 ```
 To open the project, you then start the project file <b><i>SummerPractise.sln</i></b> with Visual Studio Community or any prefered version of Visual Studio.
 
