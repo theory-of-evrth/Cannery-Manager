@@ -2,12 +2,12 @@
 
 namespace SummerPractise
 {
-     public static class Current_User
+     public static class CurrentUser
      {
             public static int id { get; set; }
      }
 
-    public static class Saved_Values
+    public static class SavedValues
     {
         public static int coefficient { get; set; }
     }

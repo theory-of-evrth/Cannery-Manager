@@ -30,14 +30,14 @@ namespace SummerPractise
         private void ToFinal_Button(Object sender, RoutedEventArgs e)
         {
             
-            MessageBox.Show($"Успешный логин, человек с id {Current_User.id}");
+            MessageBox.Show($"Успешный логин, человек с id {CurrentUser.id}");
             MainWindow finalWIN = new MainWindow();
             finalWIN.Content = new FinalWinXaml();
             finalWIN.Show();
         }
         private void Admin_Button(Object sender, RoutedEventArgs e)
         {
-            if (Current_User.id == 666)
+            if (CurrentUser.id == 666)
             {
                 MainWindow navWIN = new MainWindow();
                 navWIN.Content = new AdminPage();
@@ -50,7 +50,7 @@ namespace SummerPractise
         }
         private void ToEdit_Button(Object sender, RoutedEventArgs e)
         {
-            if (Current_User.id == 666)
+            if (CurrentUser.id == 666)
             {
                 MainWindow EditWIN = new MainWindow();
                 EditWIN.Content = new EditPage();
@@ -61,7 +61,7 @@ namespace SummerPractise
             var users = db.Users;
             foreach (User u in users)
             {
-                if (u.id == Current_User.id)
+                if (u.id == CurrentUser.id)
                 {
                     if (u.edit_permission)
                     {
@@ -79,7 +79,7 @@ namespace SummerPractise
 
         private void Order_Button(Object sender, RoutedEventArgs e)
         {
-            if (Current_User.id == 666)
+            if (CurrentUser.id == 666)
             {
                 MainWindow OrderWIN = new MainWindow();
                 OrderWIN.Content = new OrderPage();
@@ -90,7 +90,7 @@ namespace SummerPractise
             var users = db.Users;
             foreach (User u in users)
             {
-                if (u.id == Current_User.id)
+                if (u.id == CurrentUser.id)
                 {
                     if (u.edit_permission)
                     {

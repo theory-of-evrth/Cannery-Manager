@@ -43,7 +43,7 @@ namespace SummerPractise
         
             if (login == "root" && password == "root")
             {
-                Current_User.id = 666;
+                CurrentUser.id = 666;
                 MainWindow MenuWIN = new MainWindow();
                 MenuWIN.Content = new MenuPage();
                 this.Close();
@@ -65,7 +65,7 @@ namespace SummerPractise
                 if (u.name == login && u.password == password)
                 {
                     MessageBox.Show($"Успешный логин, человек с id {u.id}");
-                    Current_User.id = u.id;
+                    CurrentUser.id = u.id;
                     MainWindow MenuWIN = new MainWindow();
                     MenuWIN.Content = new MenuPage();
                     this.Close();

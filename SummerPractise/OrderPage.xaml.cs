@@ -125,7 +125,7 @@ namespace SummerPractise
                 Currency currency = currencyBox.SelectedItem as Currency;
                 Order order = new Order()
                 {
-                    user = db.Users.Find(Current_User.id),
+                    user = db.Users.Find(CurrentUser.id),
                     obj = good,
                     date = DateTime.Now.ToString(),
                     price = Math.Round(good.rel_price / currency.rate, 3),

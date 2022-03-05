@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SummerPractise.Model
 {
-    class Provider_Offer
+    class ProviderOffer
     {
         public int id { get; set; }
         public User user { get; set; }

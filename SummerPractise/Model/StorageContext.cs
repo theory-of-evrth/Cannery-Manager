@@ -15,7 +15,7 @@ namespace SummerPractise.Model
         public DbSet<Change> Changes { get; set; }
         public DbSet<Good_in_Stock> Goods_In_Stocks { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Provider_Offer> Provider_Offers { get; set; }
+        public DbSet<ProviderOffer> Provider_Offers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

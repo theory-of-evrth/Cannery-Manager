@@ -46,12 +46,12 @@ namespace SummerPractise
 
         private void AddPendingGoods_Button(Object sender, RoutedEventArgs e)
         {
-            if (Current_User.id == 666)
+            if (CurrentUser.id == 666)
             {
                 MessageBox.Show("Зачем администратору отправлять запросы самому себе? Пожалуйста, редактируйте всё, что хотите, напрямую.");
                 return;
             }
-            Provider_Offer provider_Offer = chooseProvider.SelectedItem as Provider_Offer;
+            ProviderOffer provider_Offer = chooseProvider.SelectedItem as ProviderOffer;
 
             if (provider_Offer == null)
             {
@@ -65,7 +65,7 @@ namespace SummerPractise
             }
 
             db.Changes.Add(new Change() {
-                user = db.Users.Find(Current_User.id),
+                user = db.Users.Find(CurrentUser.id),
                 type = "Добавление товара",
                 obj=provider_Offer.obj,
                 date= DateTime.Now.ToString(),
@@ -78,7 +78,7 @@ namespace SummerPractise
         }
         private void DeletePendingGoods_Button(Object sender, RoutedEventArgs e)
         {
-            if (Current_User.id == 666)
+            if (CurrentUser.id == 666)
             {
                 MessageBox.Show("Зачем администратору отправлять запросы самому себе? Пожалуйста, редактируйте всё, что хотите, напрямую.");
                 return;
@@ -99,7 +99,7 @@ namespace SummerPractise
 
             _ = db.Changes.Add(new Change()
             {
-                user = db.Users.Find(Current_User.id),
+                user = db.Users.Find(CurrentUser.id),
                 type = "Удаление товара",
                 obj = our_good,
                 date = DateTime.Now.ToString(),
@@ -113,7 +113,7 @@ namespace SummerPractise
         }
         private void EditPendingGoods_Button(Object sender, RoutedEventArgs e)
         {
-            if (Current_User.id == 666)
+            if (CurrentUser.id == 666)
             {
                 MessageBox.Show("Зачем администратору отправлять запросы самому себе? Пожалуйста, редактируйте всё, что хотите, напрямую.");
                 return;
@@ -134,7 +134,7 @@ namespace SummerPractise
 
             db.Changes.Add(new Change()
             {
-                user = db.Users.Find(Current_User.id),
+                user = db.Users.Find(CurrentUser.id),
                 type = "Изменение товара",
                 obj = our_good,
                 date = DateTime.Now.ToString(),
