@@ -1,5 +1,18 @@
+<style>
+   .sign {
+    float: right; /* Выравнивание по правому краю */
+    border: 1px solid #333; /* Параметры рамки */
+    padding: 7px; /* Поля внутри блока */
+    margin: 10px 0 5px 5px; /* Отступы вокруг */
+   }
+   .sign figcaption {
+    margin: 0 auto 5px; /* Отступы вокруг абзаца */
+   }
+  </style>
+
 # <img src = "docs/canneryManager.PNG">
-<b>Cannery Manager</b> («Консервный менеджер») is a tool created for managing the work of a warehouse, strictly for ukrainian users and non-commersial purposes, by students of the <i>Odesa Mechnikov National University</i> for their Summer Practice.
+
+<b>Cannery Manager</b> (rus. «Консервный менеджер») is a tool created for managing the work of a warehouse, strictly for ukrainian users and non-commersial purposes, by students of the <i>Odesa Mechnikov National University</i> for their Summer Practice.
 
 ## General Information
 
@@ -7,26 +20,23 @@ The main goal of the work is to keep up-to-date records of goods in the warehous
 
 - register the purchase of a particular product in any currency, register the purchase of several goods at once with the calculation of the price in the selected currency.
 - conduct a revaluation of goods in the warehouse, taking into account current exchange rate.
-- add product, delete & edit
+- add, delete or edit products
 
 It should also be possible to see how things are going in general: we can get information about the current exchange rate, stored goods, and the latest warehouse orders.
 
-Actions may or may not be carried out depending on the permissions of the user. We get the permessions from the database, to which only the administrator can add other users.
+Actions may or may not be carried out depending on the permissions of the user. We get permissions from the database, to which only the administrator can add other users.
 
-<i>You may understand how our system works if you look at the scheme:</i>
+<figure class="sign">
 <img src = "docs/projectScheme.jpeg">
+<figcaption><i>The scheme that may help you understand how our system works</i></figcaption>
+</figure>
 
 ## Tech Stack
 
-.NET Core 3.1 is used as a platform. 
-
-C# is used as a .NET language.
-
-WPF is used for GUI.
-
-The JSON format is used to serialize and transmit structured data over a network connection.
-
-SQLite is used as a relational DBMS.
+- Platform: .NET Core 3.1
+- Language: C#
+- GUI: WPF
+- DB: SQlite
 
 ## Requirements
 - .NET Core 3.1+
