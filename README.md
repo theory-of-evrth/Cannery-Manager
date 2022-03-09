@@ -1,15 +1,3 @@
-<style>
-   .sign {
-    float: right; /* Выравнивание по правому краю */
-    border: 1px solid #333; /* Параметры рамки */
-    padding: 7px; /* Поля внутри блока */
-    margin: 10px 0 5px 5px; /* Отступы вокруг */
-   }
-   .sign figcaption {
-    margin: 0 auto 5px; /* Отступы вокруг абзаца */
-   }
-  </style>
-
 # <img src = "docs/canneryManager.PNG">
 
 <b>Cannery Manager</b> (rus. «Консервный менеджер») is a tool created for managing the work of a warehouse, strictly for ukrainian users and non-commersial purposes, by students of the <i>Odesa Mechnikov National University</i> for their Summer Practice.
@@ -26,10 +14,9 @@ It should also be possible to see how things are going in general: we can get in
 
 Actions may or may not be carried out depending on the permissions of the user. We get permissions from the database, to which only the administrator can add other users.
 
-<figure class="sign">
+
 <img src = "docs/projectScheme.jpeg">
-<figcaption><i>The scheme that may help you understand how our system works</i></figcaption>
-</figure>
+<i>The scheme that may help you understand how our system works</i>
 
 ## Tech Stack
 
